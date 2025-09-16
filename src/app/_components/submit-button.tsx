@@ -3,10 +3,12 @@
 import { Button, type ButtonProps } from "flowbite-react/components/Button";
 import { useTranslation } from "react-i18next";
 import { useActionContext } from "react-form-action/client";
-import type { RP } from "react-render-prop-type";
+
+import type { RenderProp } from "@/types";
+
 
 type SubmitButtonProps = Omit<ButtonProps, "children"> &
-  Partial<RP<{ isPending: boolean }>>;
+  Partial<RenderProp<{ isPending: boolean }>>;
 
 export function SubmitButton({ children, ...props }: SubmitButtonProps) {
   const { isPending } = useActionContext();

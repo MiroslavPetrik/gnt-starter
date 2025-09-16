@@ -1,10 +1,9 @@
 import "@/styles/globals.css";
 
 import { cookies } from "next/headers";
-import type { PropsWithChildren } from "react";
 
 import { TRPCReactProvider } from "@/trpc/react";
-import type { Params } from "@/types";
+import type { LayoutParams } from "@/types";
 import { Language } from "@/i18n/client";
 import { font } from "@/styles/font";
 import { CookiesProvider } from "../_components/cookies-provider";
@@ -19,7 +18,7 @@ export const metadata = {
 export default async function RootLayout({
   children,
   params,
-}: PropsWithChildren<Params>) {
+}: LayoutParams) {
   const { lng } = await params;
   const cookie = (await cookies()).toString();
 

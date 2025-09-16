@@ -1,9 +1,13 @@
-import type { LanguageParam } from "@/i18n/types";
 
-export type Params<T extends Record<string, unknown> = Record<string, never>> =
-  {
-    params: Promise<LanguageParam & T>;
-  };
+import type { AppRoutes } from ".next/types/routes";
+
+import type { Prettify } from "./utils";
+
+type LangRoutes = keyof {
+  [k in AppRoutes as k extends `/[lng]${infer path}`? path : never]: true
+};
+
+export type Params<Route extends LangRoutes = ""> = Prettify<PageProps<`/[lng]${Route}`>>;
 
 export type SearchParams<T extends string> = {
   searchParams: Promise<{ [key in T]: string | string[] | undefined }>;

@@ -1,6 +1,5 @@
-import type { PropsWithChildren } from "react";
 import { redirect } from "next/navigation";
-import { type Params } from "@/types";
+import { type LayoutParams } from "@/types";
 import { authorizedSession } from "@/gel";
 import { translate } from "@/i18n";
 import { api } from "@/trpc/server";
@@ -11,7 +10,7 @@ import { SignOutButton } from "./_components/sign-out-button";
 export default async function Layout({
   children,
   params,
-}: PropsWithChildren<Params>) {
+}: LayoutParams) {
   if (!(await authorizedSession())) {
     redirect("/");
   }
