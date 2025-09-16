@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "magicstack.edgedb"
+        "magicstack.edgedb",
+        "tamasfe.even-better-toml"
     ]
 }
