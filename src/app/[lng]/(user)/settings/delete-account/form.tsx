@@ -9,7 +9,7 @@ export function DeleteUserForm() {
 
   return (
     <Form>
-      <SubmitButton color="failure">
+      <SubmitButton color="red">
         {({ isPending }) =>
           isPending ? t("deleteAccount.submitting") : t("deleteAccount.submit")
         }

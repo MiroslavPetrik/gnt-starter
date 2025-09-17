@@ -117,7 +117,7 @@ export function SignUpForm() {
                 >
                   <Trans i18nKey="signUp.agreeTOC" t={t}>
                     I agree with the&nbsp;
-                    <Link href="#" className="text-cyan-600 hover:underline">
+                    <Link href="#" className="text-primary-600 hover:underline">
                       terms and conditions
                     </Link>
                   </Trans>
@@ -135,7 +135,7 @@ export function SignUpForm() {
         <Label>
           <Trans i18nKey="signUp.linkToSignIn" t={t}>
             Already have an account?&nbsp;
-            <Link href="/signin" className="text-cyan-600 hover:underline">
+            <Link href="/signin" className="text-primary-600 hover:underline">
               Sign in
             </Link>
           </Trans>

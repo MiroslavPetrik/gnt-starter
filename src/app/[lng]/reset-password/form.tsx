@@ -103,7 +103,7 @@ export function ResetPasswordForm({ reset_token }: Props) {
             Link expired?&nbsp;
             <Link
               href="/reset-password/email"
-              className="text-cyan-600 hover:underline"
+              className="text-primary-600 hover:underline"
             >
               Get another.
             </Link>

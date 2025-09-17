@@ -64,7 +64,7 @@ export function ResetPasswordEmailForm() {
         <Label>
           <Trans i18nKey="resetPasswordEmail.linkToSignIn" t={t}>
             Go back to&nbsp;
-            <Link href="/signin" className="text-cyan-600 hover:underline">
+            <Link href="/signin" className="text-primary-600 hover:underline">
               Sign in
             </Link>
           </Trans>

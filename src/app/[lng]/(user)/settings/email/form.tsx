@@ -46,7 +46,7 @@ export function EmailForm({ email }: Props) {
         </FormItem>
         {!email.verifiedAt && (
           <div>
-            <SubmitButton color="warning">
+            <SubmitButton color="yellow">
               {({ isPending }) =>
                 isPending
                   ? t("email.sendingVerificationLink")
