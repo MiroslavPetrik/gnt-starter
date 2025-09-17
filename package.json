@@ -33,7 +33,7 @@
     "staging:db:migrate": "gel migrate -I MiroslavPetrik/gnt"
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.11.1",
+    "@t3-oss/env-nextjs": "^0.13.8",
     "@tanstack/react-query": "^5.62.2",
     "@tanstack/react-query-devtools": "^5.62.2",
     "@trpc/client": "^11.0.0",
@@ -52,7 +52,7 @@
     "react-form-action": "^2.5.2",
     "react-i18next": "^15.4.0",
     "superjson": "^2.2.2",
-    "zod": "^3.23.8",
+    "zod": "^3.24.0",
     "zod-form-data": "^2.0.2",
     "zod-i18n-map": "^2.27.0",
     "gel": "^2.1.1",
