@@ -85,7 +85,7 @@
     "react-render-prop-type": "^1.0.0",
     "storybook": "^8.6.9",
     "tailwindcss": "^3.4.16",
-    "typescript": "^5.7.2",
+    "typescript": "^5.9.2",
     "@gel/generate": "^0.6.4"
   },
   "packageManager": "npm@10.9.2"
