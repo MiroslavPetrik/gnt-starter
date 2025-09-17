@@ -9,7 +9,7 @@ const preview: Preview = {
   parameters: {
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
     nextjs: {
-      // https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/#nextnavigation
+      // https://storybook.js.org/docs/get-started/frameworks/nextjs?renderer=react#set-nextjsappdirectory-to-true
       appDirectory: true,
     },
   },
