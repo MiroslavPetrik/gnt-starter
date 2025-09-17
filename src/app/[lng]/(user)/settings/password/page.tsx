@@ -26,7 +26,7 @@ export default async function Page({ params }: Params) {
   return (
     <Action action={sendCurrentUserPasswordResetEmail} initialData={undefined}>
       <PageHeader>{t("password.title")}</PageHeader>
-      <p className="mb-4 font-normal text-gray-700 dark:text-gray-400">
+      <p className="mb-4 font-normal text-gray-700">
         {t("password.message", { email: user.email.address })}
       </p>
       <PasswordResetEmailForm />

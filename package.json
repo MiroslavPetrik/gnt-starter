@@ -33,6 +33,7 @@
     "staging:db:migrate": "gel migrate -I MiroslavPetrik/gnt"
   },
   "dependencies": {
+    "@gel/auth-nextjs": "^0.4.1",
     "@t3-oss/env-nextjs": "^0.13.8",
     "@tanstack/react-query": "^5.62.2",
     "@tanstack/react-query-devtools": "^5.62.2",
@@ -42,6 +43,7 @@
     "@trpc/server": "^11.0.0",
     "accept-language": "^3.0.20",
     "flowbite-react": "^0.12.9",
+    "gel": "^2.1.1",
     "i18next": "^24.2.1",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-resources-to-backend": "^1.2.1",
@@ -54,20 +56,20 @@
     "superjson": "^2.2.2",
     "zod": "^3.24.0",
     "zod-form-data": "^2.0.2",
-    "zod-i18n-map": "^2.27.0",
-    "gel": "^2.1.1",
-    "@gel/auth-nextjs": "^0.4.1"
+    "zod-i18n-map": "^2.27.0"
   },
   "devDependencies": {
+    "@gel/generate": "^0.6.4",
+    "@storybook/addon-docs": "^9.1.6",
     "@storybook/addon-links": "^9.1.6",
     "@storybook/nextjs": "^9.1.6",
+    "@tailwindcss/postcss": "^4.1.13",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.19",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
-    "autoprefixer": "^10.4.20",
     "eslint": "^8.56.0",
     "eslint-config-next": "15.0.4",
     "eslint-plugin-storybook": "^9.1.6",
@@ -79,10 +81,8 @@
     "prettier-plugin-tailwindcss": "^0.6.14",
     "react-render-prop-type": "^1.0.0",
     "storybook": "^9.1.6",
-    "tailwindcss": "^3.4.16",
-    "typescript": "^5.9.2",
-    "@gel/generate": "^0.6.4",
-    "@storybook/addon-docs": "^9.1.6"
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
   },
   "packageManager": "npm@10.9.2"
 }

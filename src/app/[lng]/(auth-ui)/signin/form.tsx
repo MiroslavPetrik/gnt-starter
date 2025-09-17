@@ -68,7 +68,7 @@ export function SignInForm() {
                   <Link
                     tabIndex={-1}
                     href="/reset-password/email"
-                    className="text-cyan-600 hover:underline dark:text-cyan-500"
+                    className="text-cyan-600 hover:underline"
                   >
                     {t("signIn.forgotPassword")}
                   </Link>
@@ -92,10 +92,7 @@ export function SignInForm() {
         <Label>
           <Trans i18nKey="signIn.linkToSignUp" t={t}>
             Don&apos;t have an account?&nbsp;
-            <Link
-              href="/signup"
-              className="text-cyan-600 hover:underline dark:text-cyan-500"
-            >
+            <Link href="/signup" className="text-cyan-600 hover:underline">
               Sign up
             </Link>
           </Trans>

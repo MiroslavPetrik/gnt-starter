@@ -15,7 +15,7 @@ export default async function DeleteAccount({ params }: Params) {
   return (
     <Action action={deleteUser} initialData="">
       <PageHeader>{t("deleteAccount.title")}</PageHeader>
-      <p className="mb-4 font-normal text-gray-700 dark:text-gray-400">
+      <p className="mb-4 font-normal text-gray-700">
         {t("deleteAccount.warningMessage")}
       </p>
       <DeleteUserForm />

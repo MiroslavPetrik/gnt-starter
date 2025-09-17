@@ -11,10 +11,7 @@ import {
 import { type ReactNode } from "react";
 import { NavbarLinks } from "./navbar-links";
 
-type Props = {
-  user: User;
-  signOutButton: ReactNode;
-} & LanguageParam;
+type Props = { user: User; signOutButton: ReactNode } & LanguageParam;
 
 export async function Navbar({ lng, user, signOutButton }: Props) {
   const { t } = await translate("global", lng);
@@ -28,10 +25,10 @@ export async function Navbar({ lng, user, signOutButton }: Props) {
     <BaseNavbar
       fluid
       rounded
-      className="sticky start-0 top-0 z-20 w-full border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900"
+      className="sticky start-0 top-0 z-20 w-full border-b border-gray-200 bg-white"
     >
       <NavbarBrand href="/">
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+        <span className="self-center text-xl font-semibold whitespace-nowrap">
           GNT Starter
         </span>
       </NavbarBrand>

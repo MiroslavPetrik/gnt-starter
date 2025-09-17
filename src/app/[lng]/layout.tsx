@@ -7,6 +7,7 @@ import type { LayoutParams } from "@/types";
 import { Language } from "@/i18n/client";
 import { font } from "@/styles/font";
 import { CookiesProvider } from "../_components/cookies-provider";
+import { ThemeInit } from ".flowbite-react/init";
 
 export const metadata = {
   title: "GNT Starter App",
@@ -21,6 +22,7 @@ export default async function RootLayout({ children, params }: LayoutParams) {
 
   return (
     <html lang={lng}>
+      <ThemeInit />
       <body className={`font-sans ${font.variable} flex min-h-screen flex-col`}>
         <CookiesProvider cookies={cookie}>
           <Language lng={lng}>
