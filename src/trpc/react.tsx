@@ -1,10 +1,10 @@
 "use client";
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { type QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { loggerLink, httpBatchStreamLink } from "@trpc/client";
 import {
   createTRPCReact,
-  inferReactQueryProcedureOptions,
+  type inferReactQueryProcedureOptions,
 } from "@trpc/react-query";
 import { useState } from "react";
 
@@ -45,10 +45,7 @@ export function TRPCReactProvider(props: {
           transformer,
           url: getUrl(),
           headers() {
-            return {
-              cookie: props.cookies,
-              "x-trpc-source": "react",
-            };
+            return { cookie: props.cookies, "x-trpc-source": "react" };
           },
         }),
       ],
