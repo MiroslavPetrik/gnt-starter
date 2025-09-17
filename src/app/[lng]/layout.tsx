@@ -15,10 +15,7 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default async function RootLayout({
-  children,
-  params,
-}: LayoutParams) {
+export default async function RootLayout({ children, params }: LayoutParams) {
   const { lng } = await params;
   const cookie = (await cookies()).toString();
 

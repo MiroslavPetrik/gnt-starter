@@ -7,10 +7,7 @@ import { api } from "@/trpc/server";
 import { Navbar } from "./_components/navbar";
 import { SignOutButton } from "./_components/sign-out-button";
 
-export default async function Layout({
-  children,
-  params,
-}: LayoutParams) {
+export default async function Layout({ children, params }: LayoutParams) {
   if (!(await authorizedSession())) {
     redirect("/");
   }

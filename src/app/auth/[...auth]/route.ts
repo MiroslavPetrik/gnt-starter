@@ -11,7 +11,7 @@ const { GET, POST } = auth.createAuthRouteHandlers({
       redirect("/settings/email");
     }
   },
- async onSignout() {
+  async onSignout() {
     // FIXME: the 'set-cookie' response headers are set only when the cookie store is awaited:
     await cookies();
 

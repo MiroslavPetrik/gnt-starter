@@ -6,7 +6,6 @@ import { useActionContext } from "react-form-action/client";
 
 import type { RenderProp } from "@/types";
 
-
 type SubmitButtonProps = Omit<ButtonProps, "children"> &
   Partial<RenderProp<{ isPending: boolean }>>;
 
