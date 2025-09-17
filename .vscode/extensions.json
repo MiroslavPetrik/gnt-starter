@@ -1,3 +1,7 @@
 {
-  "recommendations": ["magicstack.edgedb", "tamasfe.even-better-toml"]
+  "recommendations": [
+    "magicstack.edgedb",
+    "tamasfe.even-better-toml",
+    "bradlc.vscode-tailwindcss"
+  ]
 }

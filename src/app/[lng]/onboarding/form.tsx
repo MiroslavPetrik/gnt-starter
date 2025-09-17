@@ -7,6 +7,7 @@ import {
 } from "react-form-action/client";
 import { SubmitButton } from "@/app/_components/submit-button";
 import { Label } from "flowbite-react/components/Label";
+import { HelperText } from "flowbite-react/components/HelperText";
 import { TextInput } from "flowbite-react/components/TextInput";
 import { useTranslation } from "react-i18next";
 import { Stack, FormLabel, FormItem } from "@/app/_components";
@@ -26,11 +27,9 @@ export function CreateUserForm() {
           {({ name, error }) => (
             <FormItem>
               <FormLabel>
-                <Label
-                  htmlFor={name}
-                  value={t("name")}
-                  color={isInvalid ? "failure" : undefined}
-                />
+                <Label htmlFor={name} color={isInvalid ? "failure" : undefined}>
+                  {t("name")}
+                </Label>
               </FormLabel>
               <TextInput
                 id={name}
@@ -39,8 +38,8 @@ export function CreateUserForm() {
                 color={isInvalid ? "failure" : undefined}
                 type="text"
                 placeholder="Patrick"
-                helperText={error}
               />
+              <HelperText>{error}</HelperText>
             </FormItem>
           )}
         </FieldError>

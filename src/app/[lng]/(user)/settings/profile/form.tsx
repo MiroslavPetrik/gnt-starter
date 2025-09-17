@@ -1,6 +1,6 @@
 "use client";
 
-import { Alert, Label, TextInput } from "flowbite-react";
+import { Alert, HelperText, Label, TextInput } from "flowbite-react";
 import {
   createComponents,
   Form,
@@ -50,7 +50,6 @@ export function UpdateUserForm({ user }: { user: User }) {
                 disabled={isPending}
                 color={nameError ? "failure" : getColor(error)}
                 placeholder={t("editProfile.newName")}
-                helperText={error ?? nameError}
                 onChange={(e) => {
                   const result = updateUserSchema.shape.name.safeParse(
                     e.target.value,
@@ -59,6 +58,7 @@ export function UpdateUserForm({ user }: { user: User }) {
                   setNameErr(result.error?.errors[0]?.message);
                 }}
               />
+              <HelperText>{error ?? nameError}</HelperText>
             </FormItem>
           )}
         </FieldError>

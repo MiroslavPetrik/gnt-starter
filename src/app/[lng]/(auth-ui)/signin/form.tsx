@@ -8,6 +8,7 @@ import {
   useActionContext,
 } from "react-form-action/client";
 import { Alert } from "flowbite-react";
+import { HelperText } from "flowbite-react/components/HelperText";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next/TransWithoutContext";
 import { SubmitButton } from "@/app/_components/submit-button";
@@ -49,8 +50,8 @@ export function SignInForm() {
                 color={getColor(error)}
                 type="text"
                 placeholder="hello@gnt.app"
-                helperText={error}
               />
+              <HelperText>{error}</HelperText>
             </FormItem>
           )}
         </FieldError>
@@ -80,8 +81,10 @@ export function SignInForm() {
                 color={getColor(error)}
                 type="password"
                 placeholder="Your password"
-                helperText={<FieldError name="password" />}
               />
+              <HelperText>
+                <FieldError name="password" />
+              </HelperText>
             </FormItem>
           )}
         </FieldError>

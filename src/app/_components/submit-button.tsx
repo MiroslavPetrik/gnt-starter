@@ -18,12 +18,7 @@ export function SubmitButton({ children, ...props }: SubmitButtonProps) {
     (({ isPending }) => (isPending ? t("submitting") : t("submit")));
 
   return (
-    <Button
-      {...props}
-      type="submit"
-      isProcessing={isPending}
-      disabled={isPending}
-    >
+    <Button {...props} type="submit" disabled={isPending}>
       {render({ isPending })}
     </Button>
   );

@@ -1,6 +1,4 @@
-import React from "react";
 import type { Preview } from "@storybook/nextjs";
-import { FlowbiteTheme } from "../src/app/_components/flowbite-theme";
 import "../src/styles/globals.css";
 
 // TODO: Using next/font/google is broken
@@ -9,12 +7,7 @@ import "../src/styles/globals.css";
 
 const preview: Preview = {
   parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
+    controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
     nextjs: {
       // https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/#nextnavigation
       appDirectory: true,
@@ -25,11 +18,6 @@ const preview: Preview = {
       <div className="inter-temp-font">
         <Story />
       </div>
-    ),
-    (Story) => (
-      <FlowbiteTheme>
-        <Story />
-      </FlowbiteTheme>
     ),
   ],
 };

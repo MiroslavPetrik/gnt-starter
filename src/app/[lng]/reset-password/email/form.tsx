@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 import { useTranslation } from "react-i18next";
-import { Alert } from "flowbite-react";
+import { Alert, HelperText } from "flowbite-react";
 import { Label, TextInput } from "flowbite-react";
 import {
   Form,
@@ -55,8 +55,8 @@ export function ResetPasswordEmailForm() {
                 color={getColor(error)}
                 type="text"
                 placeholder="hello@gnt.app"
-                helperText={error}
               />
+              <HelperText>{error}</HelperText>
             </FormItem>
           )}
         </FieldError>

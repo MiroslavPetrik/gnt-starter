@@ -48,11 +48,9 @@ export function SignUpForm() {
           {({ error, name }) => (
             <FormItem>
               <FormLabel>
-                <Label
-                  htmlFor={name}
-                  color={getColor(error)}
-                  value={t("signUp.email")}
-                />
+                <Label htmlFor={name} color={getColor(error)}>
+                  {t("signUp.email")}
+                </Label>
               </FormLabel>
               <TextInput
                 id={name}
@@ -62,8 +60,8 @@ export function SignUpForm() {
                 required
                 shadow
                 color={getColor(error)}
-                helperText={error}
               />
+              <HelperText>{error}</HelperText>
             </FormItem>
           )}
         </FieldError>
@@ -71,11 +69,9 @@ export function SignUpForm() {
           {({ error, name }) => (
             <FormItem>
               <FormLabel>
-                <Label
-                  htmlFor={name}
-                  color={getColor(error)}
-                  value={t("signUp.password")}
-                />
+                <Label htmlFor={name} color={getColor(error)}>
+                  {t("signUp.password")}
+                </Label>
               </FormLabel>
               <TextInput
                 id={name}
@@ -84,8 +80,8 @@ export function SignUpForm() {
                 required
                 shadow
                 color={getColor(error)}
-                helperText={error}
               />
+              <HelperText>{error}</HelperText>
             </FormItem>
           )}
         </FieldError>
@@ -93,11 +89,9 @@ export function SignUpForm() {
           {({ error, name }) => (
             <FormItem>
               <FormLabel>
-                <Label
-                  htmlFor={name}
-                  color={getColor(error)}
-                  value={t("signUp.passwordRepeat")}
-                />
+                <Label htmlFor={name} color={getColor(error)}>
+                  {t("signUp.passwordRepeat")}
+                </Label>
               </FormLabel>
               <TextInput
                 id={name}
@@ -106,8 +100,8 @@ export function SignUpForm() {
                 required
                 shadow
                 color={getColor(error)}
-                helperText={error}
               />
+              <HelperText>{error}</HelperText>
             </FormItem>
           )}
         </FieldError>
@@ -138,7 +132,7 @@ export function SignUpForm() {
             </FormItem>
           )}
         </FieldError>
-        <Button type="submit" disabled={isPending} isProcessing={isPending}>
+        <Button type="submit" disabled={isPending}>
           {t("signUp.register")}
         </Button>
         <Label>

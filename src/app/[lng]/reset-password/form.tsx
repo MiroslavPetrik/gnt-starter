@@ -1,6 +1,6 @@
 "use client";
 
-import { Label, TextInput } from "flowbite-react";
+import { HelperText, Label, TextInput } from "flowbite-react";
 import {
   Form,
   useActionContext,
@@ -24,9 +24,7 @@ const GEL_ERR_MESSAGES = {
   noPkceVerifier: "no pkce verifier cookie found",
 };
 
-type Props = {
-  [resetTokenFieldName]: string;
-};
+type Props = { [resetTokenFieldName]: string };
 
 export function ResetPasswordForm({ reset_token }: Props) {
   const { t } = useTranslation("auth");
@@ -93,8 +91,8 @@ export function ResetPasswordForm({ reset_token }: Props) {
                 type="password"
                 disabled={isPending}
                 color={getColor(error)}
-                helperText={error}
               />
+              <HelperText>{error}</HelperText>
             </FormItem>
           )}
         </FieldError>
