@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/gel";
+import { cookies } from "next/headers";
 
 const { GET, POST } = auth.createAuthRouteHandlers({
   onEmailVerify({ error }) {
@@ -10,7 +11,10 @@ const { GET, POST } = auth.createAuthRouteHandlers({
       redirect("/settings/email");
     }
   },
-  onSignout() {
+ async onSignout() {
+    // FIXME: the 'set-cookie' response headers are set only when the cookie store is awaited:
+    await cookies();
+
     redirect("/");
   },
 });
