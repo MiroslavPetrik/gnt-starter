@@ -26,9 +26,9 @@
     "ncu": "ncu --interactive --format group",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "sb": "storybook dev -p 6006",
-    "sb:build": "storybook build",
-    "sb:up": "npx storybook@latest upgrade",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build",
+    "storybook:up": "npx storybook@latest upgrade",
     "next:tel:dis": "next telemetry disable",
     "staging:db:migrate": "gel migrate -I MiroslavPetrik/gnt"
   },

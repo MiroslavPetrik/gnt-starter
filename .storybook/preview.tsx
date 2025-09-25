@@ -1,9 +1,9 @@
 import type { Preview } from "@storybook/nextjs";
 import "../src/styles/globals.css";
 
-// TODO: Using next/font/google is broken
-// TODO: remove preview-head.html once this works
-// import {font} from "../src/styles/font"
+import { decorateWithGlobalFont } from "./decorateWithGlobalFont";
+
+import * as inter from "../src/styles/font/inter";
 
 const preview: Preview = {
   parameters: {
@@ -13,13 +13,7 @@ const preview: Preview = {
       appDirectory: true,
     },
   },
-  decorators: [
-    (Story) => (
-      <div className="inter-temp-font">
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [decorateWithGlobalFont(inter)],
 };
 
 export default preview;

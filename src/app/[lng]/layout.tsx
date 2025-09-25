@@ -1,15 +1,16 @@
 import "@/styles/globals.css";
 
 import { cookies } from "next/headers";
+import type { Metadata } from "next";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import type { LayoutParams } from "@/types";
 import { Language } from "@/i18n/client";
-import { font } from "@/styles/font";
+import { font } from "@/styles/font/inter";
 import { CookiesProvider } from "../_components/cookies-provider";
 import { ThemeInit } from ".flowbite-react/init";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "GNT Starter App",
   description:
     "GNT stands for Gel + Next.js + T3 (Tailwind + TypeScript + tRPC)",
