@@ -29,7 +29,7 @@ type Props = { [resetTokenFieldName]: string };
 export function ResetPasswordForm({ reset_token }: Props) {
   const { t } = useTranslation("auth");
 
-  const { isPending, isFailure, isSuccess, isInvalid, error, data } =
+  const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(resetPassword);
 
   function getColor(error?: string) {
