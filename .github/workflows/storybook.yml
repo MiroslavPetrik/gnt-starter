@@ -45,7 +45,7 @@ jobs:
           EDGEDB_DATABASE: ${{ vars.EDGEDB_DATABASE }}
 
       - name: Build Storybook
-        run: SKIP_ENV_VALIDATION=true npm run sb:build
+        run: SKIP_ENV_VALIDATION=true npm run storybook:build
 
       - name: Upload Storybook
         uses: actions/upload-pages-artifact@v3
