@@ -10,7 +10,7 @@ import { ResetPasswordEmailForm } from "./form";
 
 export default async function ResetPasswordEmail({ params }: Params) {
   const { lng } = await params;
-  const { t } = await translate("auth", lng);
+  const { t } = await translate("auth", { lng });
 
   return (
     <Action action={resetPasswordEmail} initialData="">

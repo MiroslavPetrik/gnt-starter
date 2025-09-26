@@ -14,7 +14,7 @@ import { NavbarLinks } from "./navbar-links";
 type Props = { user: User; signOutButton: ReactNode } & LanguageParam;
 
 export async function Navbar({ lng, user, signOutButton }: Props) {
-  const { t } = await translate("global", lng);
+  const { t } = await translate("global", { lng });
 
   const links = [
     { name: t("link.dashboard"), href: "/dashboard" },

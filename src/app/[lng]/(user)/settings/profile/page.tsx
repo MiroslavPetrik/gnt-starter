@@ -14,7 +14,7 @@ export default async function Profile({ params }: Params) {
     redirect("/");
   }
   const { lng } = await params;
-  const { t } = await translate("settings", lng);
+  const { t } = await translate("settings", { lng });
 
   return (
     <Action action={updateUser} initialData={undefined}>

@@ -46,7 +46,7 @@ export const authorizedAction = formAction.use(async () => {
 export const authAction = formAction
   .use(async () => ({ actions }))
   .use(async () => {
-    const { t } = await translate("auth", await getLngCookie());
+    const { t } = await translate("auth", { lng: await getLngCookie() });
     return { t };
   })
   .error(async ({ error, ctx: { t } }) => {

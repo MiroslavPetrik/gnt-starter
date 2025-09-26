@@ -19,7 +19,7 @@ export default async function Page({ params }: Params) {
   if (!user?.email) {
     redirect("/");
   }
-  const { t } = await translate("settings", lng);
+  const { t } = await translate("settings", { lng });
 
   return (
     <Action action={resendVerificationEmail} initialData="">

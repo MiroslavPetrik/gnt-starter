@@ -10,14 +10,15 @@ import { DeleteUserForm } from "./form";
 
 export default async function DeleteAccount({ params }: Params) {
   const { lng } = await params;
-  const { t } = await translate("settings", lng);
+  const { t } = await translate("settings", {
+    lng,
+    keyPrefix: "deleteAccount",
+  });
 
   return (
     <Action action={deleteUser} initialData="">
-      <PageHeader>{t("deleteAccount.title")}</PageHeader>
-      <p className="mb-4 font-normal text-gray-700">
-        {t("deleteAccount.warningMessage")}
-      </p>
+      <PageHeader>{t("title")}</PageHeader>
+      <p className="mb-4 font-normal text-gray-700">{t("warningMessage")}</p>
       <DeleteUserForm />
     </Action>
   );

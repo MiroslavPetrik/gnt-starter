@@ -3,7 +3,7 @@ import { Alert } from "flowbite-react/components/Alert";
 import { Trans } from "react-i18next/TransWithoutContext";
 
 export async function NotVerifiedAlert({ lng }: LanguageParam) {
-  const { t } = await translate("settings", lng);
+  const { t } = await translate("settings", { lng });
 
   return (
     <Alert rounded color="warning">

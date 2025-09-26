@@ -1,9 +1,10 @@
 import { cache } from "react";
+import { cookies } from "next/headers";
 import { createInstance } from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next/initReactI18next";
+
 import { getOptions, i18nCookieName, fallbackLng } from "./options";
-import { cookies } from "next/headers";
 import { type Languages } from "./types";
 import { setZodErrorMap } from "./zodError";
 
@@ -23,10 +24,13 @@ const initI18next = cache(async (lng: string, ns: string) => {
   return i18n;
 });
 
-export async function translate(ns: string, lng: string) {
+export async function translate(
+  ns: string,
+  { lng = fallbackLng, keyPrefix }: { lng: Languages; keyPrefix?: string },
+) {
   const i18n = await initI18next(lng, ns);
 
-  const t = i18n.getFixedT(lng, ns);
+  const t = i18n.getFixedT(lng, ns, keyPrefix);
 
   setZodErrorMap({ t });
 

@@ -10,7 +10,7 @@ export default async function Dashboard({ params }: Params) {
     redirect("/onboarding");
   }
   const { lng } = await params;
-  const { t } = await translate("dashboard", lng);
+  const { t } = await translate("dashboard", { lng });
 
   return (
     <div className="pt-16">

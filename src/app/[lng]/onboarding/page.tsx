@@ -15,7 +15,7 @@ export default async function Onboarding({ params }: Params) {
     redirect("/");
   }
 
-  const { t } = await translate("onboarding", lng);
+  const { t } = await translate("onboarding", { lng });
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">

@@ -10,7 +10,7 @@ import { SignUpForm } from "./form";
 
 export default async function SignUp({ params }: Params) {
   const { lng } = await params;
-  const { t } = await translate("auth", lng);
+  const { t } = await translate("auth", { lng });
 
   return (
     <Action action={signUp} initialData="">

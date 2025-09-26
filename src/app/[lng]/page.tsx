@@ -9,7 +9,7 @@ import { LanguageSwitcher } from "../_components/language-switcher";
 
 export default async function Home({ params }: Params) {
   const { lng } = await params;
-  const { t } = await translate("global", lng);
+  const { t } = await translate("global", { lng });
 
   if (await authorizedSession()) {
     redirect("/dashboard");

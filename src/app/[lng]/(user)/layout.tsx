@@ -19,7 +19,7 @@ export default async function Layout({ children, params }: LayoutParams) {
   }
 
   const { lng } = await params;
-  const { t } = await translate("global", lng);
+  const { t } = await translate("global", { lng });
 
   return (
     <>

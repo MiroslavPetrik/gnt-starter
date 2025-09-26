@@ -20,7 +20,7 @@ export default async function ResetPassword({
     await searchParams,
     resetTokenFieldName,
   );
-  const { t } = await translate("auth", lng);
+  const { t } = await translate("auth", { lng });
 
   return (
     <Action action={resetPassword} initialData={undefined}>
