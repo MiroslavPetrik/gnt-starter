@@ -38,7 +38,7 @@
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts",
-    ".storybook/decorateWithGlobalFont.tsx"
+    ".storybook/*.tsx"
   ],
   "exclude": ["node_modules"]
 }

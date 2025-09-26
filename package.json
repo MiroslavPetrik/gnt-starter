@@ -14,7 +14,7 @@
   "scripts": {
     "build": "next build --turbopack",
     "dev": "next dev --turbopack",
-    "lint": "eslint --ext .tsx,.ts ./src",
+    "lint": "eslint --ext .tsx,.ts src .storybook",
     "start": "next start",
     "db:edgeql-js": "npx @gel/generate edgeql-js",
     "db:edgeql-js:local": "npx @gel/generate edgeql-js --tls-security=insecure --dsn ''",

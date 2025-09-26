@@ -1,9 +1,9 @@
 import type { Preview } from "@storybook/nextjs";
-import "../src/styles/globals.css";
+
+import "@/styles/globals.css";
+import * as inter from "@/styles/font/inter";
 
 import { decorateWithGlobalFont } from "./decorateWithGlobalFont";
-
-import * as inter from "../src/styles/font/inter";
 
 const preview: Preview = {
   parameters: {
