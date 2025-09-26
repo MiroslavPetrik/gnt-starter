@@ -34,7 +34,7 @@
     "staging:db:migrate": "gel migrate -I MiroslavPetrik/gnt"
   },
   "dependencies": {
-    "@gel/auth-nextjs": "^0.4.1",
+    "@gel/auth-nextjs": "^0.4.2",
     "@t3-oss/env-nextjs": "^0.13.8",
     "@tanstack/react-query": "^5.90.2",
     "@tanstack/react-query-devtools": "^5.90.2",
