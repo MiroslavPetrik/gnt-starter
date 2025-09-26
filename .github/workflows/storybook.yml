@@ -17,11 +17,9 @@ jobs:
     steps:
       - name: Use variables
         run: |
-          echo "database : $EDGEDB_DATABASE"
-          echo "instance : $EDGEDB_INSTANCE"
+          echo "instance : $GEL_INSTANCE"
         env:
-          EDGEDB_DATABASE: ${{ vars.EDGEDB_DATABASE }}
-          EDGEDB_INSTANCE: ${{ vars.EDGEDB_INSTANCE }}
+          GEL_INSTANCE: ${{ vars.GEL_INSTANCE }}
 
       - uses: actions/checkout@v4
 
@@ -39,16 +37,18 @@ jobs:
 
       - name: Install
         run: npm install
+
+      - name: Generate Gel JS client
+        run: npm run db:gel-edgeql-js
         env:
-          EDGEDB_SECRET_KEY: ${{ secrets.EDGEDB_SECRET_KEY }}
-          EDGEDB_INSTANCE: ${{ vars.EDGEDB_INSTANCE }}
-          EDGEDB_DATABASE: ${{ vars.EDGEDB_DATABASE }}
+          GEL_SECRET_KEY: ${{ secrets.GEL_SECRET_KEY }}
+          GEL_INSTANCE: ${{ vars.GEL_INSTANCE }}
 
       - name: Build Storybook
         run: SKIP_ENV_VALIDATION=true npm run storybook:build
 
       - name: Upload Storybook
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: storybook-static
 
