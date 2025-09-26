@@ -18,7 +18,7 @@ import { resetPasswordEmail } from "./action";
 const { FieldError } = createComponents(resetPasswordEmail);
 
 export function ResetPasswordEmailForm() {
-  const { t } = useTranslation("auth");
+  const { t } = useTranslation("auth", { keyPrefix: "resetPasswordEmail" });
 
   const { isPending, isFailure, isSuccess, isInvalid, error, data } =
     useActionContext(resetPasswordEmail);
@@ -45,7 +45,7 @@ export function ResetPasswordEmailForm() {
             <FormItem>
               <FormLabel>
                 <Label htmlFor={name} color={getColor(error)}>
-                  {t("resetPasswordEmail.email")}
+                  {t("email")}
                 </Label>
               </FormLabel>
               <TextInput
@@ -62,7 +62,7 @@ export function ResetPasswordEmailForm() {
         </FieldError>
         <SubmitButton />
         <Label>
-          <Trans i18nKey="resetPasswordEmail.linkToSignIn" t={t}>
+          <Trans i18nKey="linkToSignIn" t={t}>
             Go back to&nbsp;
             <Link href="/signin" className="text-primary-600 hover:underline">
               Sign in

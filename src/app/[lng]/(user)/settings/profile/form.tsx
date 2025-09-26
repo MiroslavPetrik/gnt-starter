@@ -17,7 +17,7 @@ import { updateUserSchema } from "./schema";
 const { FieldError, Success } = createComponents(updateUser);
 
 export function UpdateUserForm({ user }: { user: User }) {
-  const { t } = useTranslation("settings");
+  const { t } = useTranslation("settings", { keyPrefix: "editProfile" });
   const [nameError, setNameErr] = useState<string | undefined>(undefined);
   const { isPending, isSuccess, isInvalid } = useActionContext(updateUser);
 
@@ -29,7 +29,7 @@ export function UpdateUserForm({ user }: { user: User }) {
     <Form className="flex flex-col gap-2">
       <Stack>
         <Success>
-          <Alert color="success">{t("editProfile.success")}</Alert>
+          <Alert color="success">{t("success")}</Alert>
         </Success>
         <FieldError name="name">
           {({ name, error }) => (
@@ -39,7 +39,7 @@ export function UpdateUserForm({ user }: { user: User }) {
                   htmlFor={name}
                   color={nameError ? "failure" : getColor(error)}
                 >
-                  {t("editProfile.name")}
+                  {t("name")}
                 </Label>
               </FormLabel>
               <TextInput
@@ -49,7 +49,7 @@ export function UpdateUserForm({ user }: { user: User }) {
                 type="text"
                 disabled={isPending}
                 color={nameError ? "failure" : getColor(error)}
-                placeholder={t("editProfile.newName")}
+                placeholder={t("newName")}
                 onChange={(e) => {
                   const result = updateUserSchema.shape.name.safeParse(
                     e.target.value,

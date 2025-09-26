@@ -11,7 +11,7 @@ import { resendVerificationEmail } from "./action";
 type Props = { email: UserEmail };
 
 export function EmailForm({ email }: Props) {
-  const { t } = useTranslation("settings");
+  const { t } = useTranslation("settings", { keyPrefix: "email" });
 
   const { isSuccess, isFailure, data, error } = useActionContext(
     resendVerificationEmail,
@@ -26,7 +26,7 @@ export function EmailForm({ email }: Props) {
               htmlFor="email"
               color={isFailure ? "failure" : isSuccess ? "success" : undefined}
             >
-              {t("email.yourEmail")}
+              {t("yourEmail")}
             </Label>
           </FormLabel>
           <TextInput
@@ -49,8 +49,8 @@ export function EmailForm({ email }: Props) {
             <SubmitButton color="yellow">
               {({ isPending }) =>
                 isPending
-                  ? t("email.sendingVerificationLink")
-                  : t("email.sendVerificationLink")
+                  ? t("sendingVerificationLink")
+                  : t("sendVerificationLink")
               }
             </SubmitButton>
           </div>

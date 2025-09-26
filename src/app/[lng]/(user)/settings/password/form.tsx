@@ -7,7 +7,7 @@ import { SubmitButton } from "@/app/_components/submit-button";
 import { Stack } from "@/app/_components";
 
 export function PasswordResetEmailForm() {
-  const { t } = useTranslation("settings");
+  const { t } = useTranslation("settings", { keyPrefix: "password" });
 
   // TODO: the hook (and also createComponents) does not yet accept action with arguments.
   const { isSuccess, isFailure, error } = useActionContext();
@@ -18,15 +18,13 @@ export function PasswordResetEmailForm() {
         <div>
           <SubmitButton>
             {({ isPending }) =>
-              isPending
-                ? t("password.sendEmail.pending")
-                : t("password.sendEmail.submit")
+              isPending ? t("sendEmail.pending") : t("sendEmail.submit")
             }
           </SubmitButton>
         </div>
         {isSuccess && (
           <Alert color="success" rounded>
-            {t("password.sendEmail.success")}
+            {t("sendEmail.success")}
           </Alert>
         )}
         {isFailure && (

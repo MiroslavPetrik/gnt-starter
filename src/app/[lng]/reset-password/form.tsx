@@ -27,7 +27,7 @@ const GEL_ERR_MESSAGES = {
 type Props = { [resetTokenFieldName]: string };
 
 export function ResetPasswordForm({ reset_token }: Props) {
-  const { t } = useTranslation("auth");
+  const { t } = useTranslation("auth", { keyPrefix: "resetPassword" });
 
   const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(resetPassword);
@@ -41,15 +41,13 @@ export function ResetPasswordForm({ reset_token }: Props) {
       <Stack>
         <div>
           <Alert color="success">
-            <Trans i18nKey="resetPassword.success" t={t}>
+            <Trans i18nKey="success" t={t}>
               <strong>Your password has been reset.</strong> You can now
               continue to the application.
             </Trans>
           </Alert>
         </div>
-        <Button href="/dashboard">
-          {t("resetPassword.continueToApplication")}
-        </Button>
+        <Button href="/dashboard">{t("continueToApplication")}</Button>
       </Stack>
     );
   }
@@ -61,12 +59,12 @@ export function ResetPasswordForm({ reset_token }: Props) {
           <div>
             <Alert color="failure">
               {error.message === GEL_ERR_MESSAGES.invalidResetToken ? (
-                <Trans i18nKey="resetPassword.error.invalidResetToken" t={t}>
+                <Trans i18nKey="error.invalidResetToken" t={t}>
                   <strong>The link has expired.</strong> Please request a new
                   one.
                 </Trans>
               ) : error.message === GEL_ERR_MESSAGES.noPkceVerifier ? (
-                <Trans i18nKey="resetPassword.error.noPkceVerifier" t={t}>
+                <Trans i18nKey="error.noPkceVerifier" t={t}>
                   <strong>Unable to continue.</strong> Please make sure to use
                   the link in the browser from which you have requested the
                   password reset email.
@@ -82,7 +80,7 @@ export function ResetPasswordForm({ reset_token }: Props) {
             <FormItem>
               <FormLabel>
                 <Label htmlFor={name} color={getColor(error)}>
-                  {t("resetPassword.newPassword")}
+                  {t("newPassword")}
                 </Label>
               </FormLabel>
               <TextInput
@@ -99,7 +97,7 @@ export function ResetPasswordForm({ reset_token }: Props) {
         <input name={resetTokenFieldName} defaultValue={reset_token} hidden />
         <SubmitButton />
         <Label>
-          <Trans i18nKey="resetPassword.linkToReset" t={t}>
+          <Trans i18nKey="linkToReset" t={t}>
             Link expired?&nbsp;
             <Link
               href="/reset-password/email"
