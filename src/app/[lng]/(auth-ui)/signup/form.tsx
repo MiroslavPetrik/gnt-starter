@@ -22,7 +22,7 @@ import { signUp } from "./action";
 const { FieldError } = createComponents(signUp);
 
 export function SignUpForm() {
-  const { t } = useTranslation("auth");
+  const { t } = useTranslation("auth", { keyPrefix: "signUp" });
 
   const { isPending, isFailure, isSuccess, isInvalid, error, data } =
     useActionContext(signUp);
@@ -49,14 +49,14 @@ export function SignUpForm() {
             <FormItem>
               <FormLabel>
                 <Label htmlFor={name} color={getColor(error)}>
-                  {t("signUp.email")}
+                  {t("email")}
                 </Label>
               </FormLabel>
               <TextInput
                 id={name}
                 name={name}
                 type="email"
-                placeholder="name@gnt.app"
+                placeholder={t("yourEmail")}
                 required
                 shadow
                 color={getColor(error)}
@@ -70,7 +70,7 @@ export function SignUpForm() {
             <FormItem>
               <FormLabel>
                 <Label htmlFor={name} color={getColor(error)}>
-                  {t("signUp.password")}
+                  {t("password")}
                 </Label>
               </FormLabel>
               <TextInput
@@ -90,7 +90,7 @@ export function SignUpForm() {
             <FormItem>
               <FormLabel>
                 <Label htmlFor={name} color={getColor(error)}>
-                  {t("signUp.passwordRepeat")}
+                  {t("passwordRepeat")}
                 </Label>
               </FormLabel>
               <TextInput
@@ -115,7 +115,7 @@ export function SignUpForm() {
                   className="flex whitespace-pre-wrap"
                   color={getColor(error)}
                 >
-                  <Trans i18nKey="signUp.agreeTOC" t={t}>
+                  <Trans i18nKey="agreeTOC" t={t}>
                     I agree with the&nbsp;
                     <Link href="#" className="text-primary-600 hover:underline">
                       terms and conditions
@@ -130,10 +130,10 @@ export function SignUpForm() {
           )}
         </FieldError>
         <Button type="submit" disabled={isPending}>
-          {t("signUp.register")}
+          {t("register")}
         </Button>
         <Label>
-          <Trans i18nKey="signUp.linkToSignIn" t={t}>
+          <Trans i18nKey="linkToSignIn" t={t}>
             Already have an account?&nbsp;
             <Link href="/signin" className="text-primary-600 hover:underline">
               Sign in
