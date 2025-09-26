@@ -18,7 +18,7 @@ import { signIn } from "./action";
 const { FieldError } = createComponents(signIn);
 
 export function SignInForm() {
-  const { t } = useTranslation("auth");
+  const { t } = useTranslation("auth", { keyPrefix: "signIn" });
 
   const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(signIn);
@@ -40,7 +40,7 @@ export function SignInForm() {
             <FormItem>
               <FormLabel>
                 <Label htmlFor={name} color={getColor(error)}>
-                  {t("signIn.email")}
+                  {t("email")}
                 </Label>
               </FormLabel>
               <TextInput
@@ -49,7 +49,7 @@ export function SignInForm() {
                 disabled={isPending}
                 color={getColor(error)}
                 type="text"
-                placeholder="hello@gnt.app"
+                placeholder={t("yourEmail")}
               />
               <HelperText>{error}</HelperText>
             </FormItem>
@@ -64,13 +64,13 @@ export function SignInForm() {
                   color={getColor(error)}
                   className="flex justify-between"
                 >
-                  <span>{t("signIn.password")}</span>
+                  <span>{t("password")}</span>
                   <Link
                     tabIndex={-1}
                     href="/reset-password/email"
                     className="text-primary-600 hover:underline"
                   >
-                    {t("signIn.forgotPassword")}
+                    {t("forgotPassword")}
                   </Link>
                 </Label>
               </FormLabel>
@@ -80,7 +80,7 @@ export function SignInForm() {
                 disabled={isPending}
                 color={getColor(error)}
                 type="password"
-                placeholder="Your password"
+                placeholder={t("yourPassword")}
               />
               <HelperText>
                 <FieldError name="password" />
@@ -90,7 +90,7 @@ export function SignInForm() {
         </FieldError>
         <SubmitButton />
         <Label>
-          <Trans i18nKey="signIn.linkToSignUp" t={t}>
+          <Trans i18nKey="linkToSignUp" t={t}>
             Don&apos;t have an account?&nbsp;
             <Link href="/signup" className="text-primary-600 hover:underline">
               Sign up
