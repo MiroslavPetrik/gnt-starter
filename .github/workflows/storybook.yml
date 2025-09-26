@@ -39,7 +39,7 @@ jobs:
         run: npm install
 
       - name: Generate Gel JS client
-        run: npm run db:gel-edgeql-js
+        run: npm run db:edgeql-js
         env:
           GEL_SECRET_KEY: ${{ secrets.GEL_SECRET_KEY }}
           GEL_INSTANCE: ${{ vars.GEL_INSTANCE }}
