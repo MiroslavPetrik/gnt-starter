@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# database
-/prisma/db.sqlite
-/prisma/db.sqlite-journal
 
 # next.js
 /.next/
@@ -46,7 +43,7 @@ yarn-error.log*
 .contentlayer
 
 
-# EdgeDB query client
+# Gel query client
 dbschema/edgeql-js
 
 # Storybook
