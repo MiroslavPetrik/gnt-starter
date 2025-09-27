@@ -29,12 +29,10 @@ export async function middleware(req: NextRequest) {
 
   // Redirect if lng in path is not supported
   if (!pathnameHasLocale && !req.nextUrl.pathname.startsWith("/_next")) {
-    // the URL, does not keep searchParams from the url passed as second argument
-    const searchParams = req.nextUrl.searchParams.toString();
-
-    const url =
-      new URL(`/${lng}${req.nextUrl.pathname}`, req.url).toString() +
-      (searchParams.length ? `?${searchParams}` : "");
+    const url = new URL(
+      `/${lng}${req.nextUrl.pathname}${req.nextUrl.search}`,
+      req.url,
+    );
 
     if (lng === fallbackLng) {
       return NextResponse.rewrite(url);
