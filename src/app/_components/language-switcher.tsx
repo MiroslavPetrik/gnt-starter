@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 import { languages } from "@/i18n/options";
-import type { Languages, LanguageParam } from "@/i18n/types";
+import type { Language, LanguageParam } from "@/i18n/types";
 import { castString } from "@/i18n/castString";
 import { Dropdown, DropdownItem } from "flowbite-react";
 import { useTranslation } from "react-i18next";
 import { useLngPathname } from "@/i18n/use-lng-pathname";
 
-const flagMap: Record<Languages, string> = { sk: "🇸🇰", en: "🇺🇸" };
+const flagMap: Record<Language, string> = { sk: "🇸🇰", en: "🇺🇸" };
 
 export function LanguageSwitcher({ lng }: LanguageParam) {
   const { t } = useTranslation("global");

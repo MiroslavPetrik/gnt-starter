@@ -5,7 +5,7 @@ import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next/initReactI18next";
 
 import { getOptions, i18nCookieName, fallbackLng } from "./options";
-import { type Languages } from "./types";
+import { type Language } from "./types";
 import { setZodErrorMap } from "./zodError";
 
 const initI18next = cache(async (lng: string, ns: string) => {
@@ -26,7 +26,7 @@ const initI18next = cache(async (lng: string, ns: string) => {
 
 export async function translate(
   ns: string,
-  { lng = fallbackLng, keyPrefix }: { lng: Languages; keyPrefix?: string },
+  { lng = fallbackLng, keyPrefix }: { lng: Language; keyPrefix?: string },
 ) {
   const i18n = await initI18next(lng, ns);
 
@@ -43,5 +43,5 @@ export async function translate(
 export async function getLngCookie() {
   const cookie = await cookies();
 
-  return (cookie.get(i18nCookieName)?.value ?? fallbackLng) as Languages;
+  return (cookie.get(i18nCookieName)?.value ?? fallbackLng) as Language;
 }

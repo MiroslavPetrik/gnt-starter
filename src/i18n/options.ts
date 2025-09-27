@@ -1,5 +1,5 @@
 import { type InitOptions } from "i18next";
-import { type Languages } from "./types";
+import { type Language } from "./types";
 
 export const fallbackLng = "en";
 export const languages = [fallbackLng, "sk"] as const; // add your locales (e.g. "de", "sk") into the list
@@ -10,7 +10,7 @@ import enZod from "zod-i18n-map/locales/en/zod.json";
 import skZod from "zod-i18n-map/locales/sk/zod.json";
 import { zodErrorNameSpace } from "./zodError";
 
-const resources: Record<Languages, { zod: Record<string, unknown> }> = {
+const resources: Record<Language, { zod: Record<string, unknown> }> = {
   en: { zod: enZod },
   sk: { zod: skZod },
 };

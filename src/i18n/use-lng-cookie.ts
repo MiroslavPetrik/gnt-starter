@@ -2,7 +2,7 @@
 
 import { useCookies } from "react-cookie";
 import { useCallback } from "react";
-import type { Languages } from "./types";
+import type { Language } from "./types";
 import { i18nCookieName } from "./options";
 
 type i18nCookies = {
@@ -17,7 +17,7 @@ export function useLngCookie() {
   const i18nCookie = cookies[i18nCookieName];
 
   const setLngCookie = useCallback(
-    (lng: Languages) => {
+    (lng: Language) => {
       setCookie(i18nCookieName, lng, { path: "/" });
     },
     [setCookie],

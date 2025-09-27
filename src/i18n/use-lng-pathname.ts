@@ -1,7 +1,7 @@
 import { usePathname } from "next/navigation";
-import type { Languages } from "./types";
+import type { Language } from "./types";
 
-export function useLngPathname(lng: Languages) {
+export function useLngPathname(lng: Language) {
   const pathname = usePathname();
 
   if (!pathname) {
@@ -19,7 +19,7 @@ export function useLngPathname(lng: Languages) {
   return pathname.slice(prefix.length) || "/";
 }
 
-function getPathnamePrefix(pathname: string, lng: Languages) {
+function getPathnamePrefix(pathname: string, lng: Language) {
   const prefix = `/${lng}` as const;
 
   if (pathname.startsWith(`${prefix}/`) || pathname === prefix) {
