@@ -21,14 +21,10 @@ export async function middleware(req: NextRequest) {
   if (!lng) lng = acceptLanguage.get(headersList.get("Accept-Language"));
   if (!lng) lng = fallbackLng;
 
-  const pathnameHasLocale = languages.some(
-    (loc) =>
-      req.nextUrl.pathname.startsWith(`/${loc}/`) ||
-      req.nextUrl.pathname === `/${loc}`,
-  );
+  const lngInPathname = languages.some(pathnameHasLocale(req.nextUrl.pathname));
 
   // Redirect if lng in path is not supported
-  if (!pathnameHasLocale && !req.nextUrl.pathname.startsWith("/_next")) {
+  if (!lngInPathname && !req.nextUrl.pathname.startsWith("/_next")) {
     const url = new URL(
       `/${lng}${req.nextUrl.pathname}${req.nextUrl.search}`,
       req.url,
@@ -43,13 +39,16 @@ export async function middleware(req: NextRequest) {
 
   if (req.headers.has("referer")) {
     const refererUrl = new URL(headersList.get("referer")!);
-    const lngInReferer = languages.find((locale) =>
-      refererUrl.pathname.startsWith(`/${locale}`),
-    );
+    const lngInReferer = languages.find(pathnameHasLocale(refererUrl.pathname));
     const response = NextResponse.next();
     if (lngInReferer) response.cookies.set(i18nCookieName, lngInReferer);
     return response;
   }
 
   return NextResponse.next();
+}
+
+function pathnameHasLocale(pathname: string) {
+  return (locale: string) =>
+    pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`;
 }
