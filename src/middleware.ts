@@ -1,25 +1,17 @@
-import { NextResponse } from "next/server";
-import acceptLanguage from "accept-language";
-import { fallbackLng, languages, i18nCookieName } from "@/i18n/options";
-import type { NextRequest } from "next/server";
-import { cookies, headers } from "next/headers";
-import { getLngCookie } from "./i18n";
+import { type NextRequest, NextResponse } from "next/server";
+import { headers } from "next/headers";
 
-acceptLanguage.languages([...languages]);
+import { fallbackLng, languages, i18nCookieName } from "@/i18n/options";
+import { detectLanguage } from "@/i18n/detect";
 
 export const config = {
   matcher: ["/((?!api|_next/static|_next/image|auth|assets|.*\\.).*)"],
 };
 
 export async function middleware(req: NextRequest) {
-  const cookiesList = await cookies();
   const headersList = await headers();
 
-  let lng;
-  if (cookiesList.has(i18nCookieName))
-    lng = acceptLanguage.get(await getLngCookie());
-  if (!lng) lng = acceptLanguage.get(headersList.get("Accept-Language"));
-  if (!lng) lng = fallbackLng;
+  const lng = detectLanguage(req);
 
   const lngInPathname = languages.some(pathnameHasLocale(req.nextUrl.pathname));
 
