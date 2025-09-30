@@ -105,7 +105,7 @@ export function SignUpForm() {
             </FormItem>
           )}
         </FieldError>
-        <FieldError name="tos">
+        <FieldError name="termsOfService">
           {({ error, name }) => (
             <FormItem className="flex items-center gap-2">
               <Checkbox id={name} name={name} color={getColor(error)} />

@@ -1,3 +1,4 @@
 {
-  "passwordsMustMatch": "Passwords must match."
+  "passwordsMustMatch": "Passwords must match.",
+  "tosRequired": "You must agree to the terms of service."
 }

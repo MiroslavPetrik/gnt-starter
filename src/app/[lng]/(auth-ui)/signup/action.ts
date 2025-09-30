@@ -9,7 +9,9 @@ const signUpSchema = z
     email: z.string().email(),
     password: z.string().min(1),
     passwordRepeat: z.string().min(1),
-    tos: z.coerce.boolean().pipe(z.literal(true)),
+    termsOfService: z.coerce.boolean().refine((agrees) => agrees, {
+      params: { i18n: t("zodError:tosRequired") },
+    }),
   })
   .refine(
     ({ password, passwordRepeat }) => {

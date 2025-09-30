@@ -1,6 +1,5 @@
 import createAuth from "@gel/auth-nextjs/app";
 import { formAction } from "react-form-action";
-import { z } from "zod";
 
 import { getBaseUrl } from "@/server/baseUrl";
 import { translate } from "@/i18n";
