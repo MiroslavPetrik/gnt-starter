@@ -27,3 +27,9 @@ export function getOptions(ns: string, lng = fallbackLng) {
     resources,
   } satisfies InitOptions;
 }
+
+export function findPathnameLanguage(pathname: string) {
+  return languages.find(
+    (lang) => pathname.startsWith(`/${lang}/`) || pathname === `/${lang}`,
+  );
+}
