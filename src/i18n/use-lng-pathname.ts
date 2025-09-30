@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation";
-import { useTranslation } from "react-i18next";
 import type { Language } from "./types";
+import { useLngCookie } from "./use-lng-cookie";
 
 export function useLngPathname() {
   const pathname = usePathname();
@@ -11,8 +11,7 @@ export function useLngPathname() {
     );
   }
 
-  const { i18n } = useTranslation();
-  const lng = i18n.resolvedLanguage as Language;
+  const [lng] = useLngCookie();
 
   const prefix = getPathnamePrefix(pathname, lng);
 
