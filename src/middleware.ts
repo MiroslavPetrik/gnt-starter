@@ -1,10 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { headers } from "next/headers";
 
 import {
   fallbackLng,
-  findPathnameLanguage,
   i18nCookieName,
+  findPathnameLanguage,
 } from "@/i18n/options";
 import { detectLanguage } from "@/i18n/detect";
 
@@ -13,8 +12,6 @@ export const config = {
 };
 
 export async function middleware(req: NextRequest) {
-  const headersList = await headers();
-
   const lng = detectLanguage(req);
   const lngInPathname = findPathnameLanguage(req.nextUrl.pathname);
 
@@ -45,14 +42,6 @@ export async function middleware(req: NextRequest) {
     const response = NextResponse.next();
     response.cookies.set(i18nCookieName, lngInPathname);
 
-    return response;
-  }
-
-  if (req.headers.has("referer")) {
-    const refererUrl = new URL(headersList.get("referer")!);
-    const lngInReferer = findPathnameLanguage(refererUrl.pathname);
-    const response = NextResponse.next();
-    if (lngInReferer) response.cookies.set(i18nCookieName, lngInReferer);
     return response;
   }
 
