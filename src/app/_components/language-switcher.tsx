@@ -2,18 +2,19 @@
 
 import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
+import { useTranslation } from "react-i18next";
+import { Dropdown, DropdownItem } from "flowbite-react";
+
 import { languages } from "@/i18n/options";
 import type { Language, LanguageParam } from "@/i18n/types";
 import { castString } from "@/i18n/castString";
-import { Dropdown, DropdownItem } from "flowbite-react";
-import { useTranslation } from "react-i18next";
 import { useLngPathname } from "@/i18n/use-lng-pathname";
 
 const flagMap: Record<Language, string> = { sk: "🇸🇰", en: "🇺🇸" };
 
 export function LanguageSwitcher({ lng }: LanguageParam) {
   const { t } = useTranslation("global");
-  const pathname = useLngPathname(lng);
+  const pathname = useLngPathname();
 
   return (
     <Dropdown

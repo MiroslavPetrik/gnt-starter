@@ -9,11 +9,10 @@ import {
   SidebarItemGroup,
 } from "flowbite-react/components/Sidebar";
 import { useTranslation } from "react-i18next";
-import type { LanguageParam } from "@/i18n";
 import { useLngPathname } from "@/i18n/use-lng-pathname";
 
-export const SettingsSidebar = ({ lng }: LanguageParam) => {
-  const pathname = useLngPathname(lng);
+export const SettingsSidebar = () => {
+  const pathname = useLngPathname();
   const { t } = useTranslation("settings");
 
   return (

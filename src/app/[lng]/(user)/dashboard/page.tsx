@@ -1,16 +1,14 @@
 import { redirect } from "next/navigation";
-import { type Params } from "@/types";
 import { translate } from "@/i18n";
 import { api } from "@/trpc/server";
 
-export default async function Dashboard({ params }: Params) {
+export default async function Dashboard() {
   const user = await api.user.getCurrentUser();
 
   if (!user) {
     redirect("/onboarding");
   }
-  const { lng } = await params;
-  const { t } = await translate("dashboard", { lng });
+  const { t } = await translate("dashboard");
 
   return (
     <div className="pt-16">

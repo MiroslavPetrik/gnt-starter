@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from "react";
-import { authorizedSession } from "@/gel";
 import { redirect } from "next/navigation";
+
+import { authorizedSession } from "@/gel";
 
 export default async function AuthLayout({ children }: PropsWithChildren) {
   if (await authorizedSession()) {

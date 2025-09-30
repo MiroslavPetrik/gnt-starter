@@ -1,9 +1,9 @@
-import { translate, type LanguageParam } from "@/i18n";
+import { translate } from "@/i18n";
 import { Alert } from "flowbite-react/components/Alert";
 import { Trans } from "react-i18next/TransWithoutContext";
 
-export async function NotVerifiedAlert({ lng }: LanguageParam) {
-  const { t } = await translate("settings", { lng });
+export async function NotVerifiedAlert() {
+  const { t } = await translate("settings");
 
   return (
     <Alert rounded color="warning">

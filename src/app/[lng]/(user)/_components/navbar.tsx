@@ -1,4 +1,4 @@
-import { type LanguageParam, translate } from "@/i18n";
+import { translate } from "@/i18n";
 import type { User } from "@/types";
 import {
   Avatar,
@@ -11,10 +11,10 @@ import {
 import { type ReactNode } from "react";
 import { NavbarLinks } from "./navbar-links";
 
-type Props = { user: User; signOutButton: ReactNode } & LanguageParam;
+type Props = { user: User; signOutButton: ReactNode };
 
-export async function Navbar({ lng, user, signOutButton }: Props) {
-  const { t } = await translate("global", { lng });
+export async function Navbar({ user, signOutButton }: Props) {
+  const { t } = await translate("global");
 
   const links = [
     { name: t("link.dashboard"), href: "/dashboard" },
@@ -43,7 +43,7 @@ export async function Navbar({ lng, user, signOutButton }: Props) {
         <NavbarToggle />
       </div>
       <NavbarCollapse>
-        <NavbarLinks links={links} lng={lng} />
+        <NavbarLinks links={links} />
       </NavbarCollapse>
     </BaseNavbar>
   );

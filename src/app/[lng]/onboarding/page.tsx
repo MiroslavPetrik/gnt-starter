@@ -1,21 +1,20 @@
 import { redirect } from "next/navigation";
-import { type Params } from "@/types";
+import { Action } from "react-form-action/client";
+
 import { translate } from "@/i18n";
 import { api } from "@/trpc/server";
 
-import { Action } from "react-form-action/client";
 import { createUser } from "./action";
 import { CreateUserForm } from "./form";
 
-export default async function Onboarding({ params }: Params) {
-  const { lng } = await params;
+export default async function Onboarding() {
   const user = await api.user.getCurrentUser();
 
   if (user) {
     redirect("/");
   }
 
-  const { t } = await translate("onboarding", { lng });
+  const { t } = await translate("onboarding");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">

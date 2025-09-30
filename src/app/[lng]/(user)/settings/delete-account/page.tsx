@@ -2,16 +2,13 @@
 
 import { Action } from "react-form-action/client";
 import { PageHeader } from "@/app/_components/page-header";
-import { type Params } from "@/types";
 import { translate } from "@/i18n";
 
 import { deleteUser } from "./action";
 import { DeleteUserForm } from "./form";
 
-export default async function DeleteAccount({ params }: Params) {
-  const { lng } = await params;
+export default async function DeleteAccount() {
   const { t } = await translate("settings", {
-    lng,
     keyPrefix: "deleteAccount",
   });
 

@@ -1,9 +1,10 @@
 import createAuth from "@gel/auth-nextjs/app";
-import { client } from "./client";
-import { getBaseUrl } from "@/server/baseUrl";
 import { formAction } from "react-form-action";
 import { z } from "zod";
-import { translate, getLngCookie } from "@/i18n";
+
+import { getBaseUrl } from "@/server/baseUrl";
+import { translate } from "@/i18n";
+import { client } from "./client";
 
 export const auth = createAuth(client, {
   baseUrl: getBaseUrl(),
@@ -46,7 +47,7 @@ export const authorizedAction = formAction.use(async () => {
 export const authAction = formAction
   .use(async () => ({ actions }))
   .use(async () => {
-    const { t } = await translate("auth", { lng: await getLngCookie() });
+    const { t } = await translate("auth");
     return { t };
   })
   .error(async ({ error, ctx: { t } }) => {

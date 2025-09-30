@@ -7,7 +7,7 @@ import { api } from "@/trpc/server";
 import { Navbar } from "./_components/navbar";
 import { SignOutButton } from "./_components/sign-out-button";
 
-export default async function Layout({ children, params }: LayoutParams) {
+export default async function Layout({ children }: LayoutParams) {
   if (!(await authorizedSession())) {
     redirect("/");
   }
@@ -18,13 +18,11 @@ export default async function Layout({ children, params }: LayoutParams) {
     redirect("/onboarding");
   }
 
-  const { lng } = await params;
-  const { t } = await translate("global", { lng });
+  const { t } = await translate("global");
 
   return (
     <>
       <Navbar
-        lng={lng}
         user={user}
         signOutButton={<SignOutButton>{t("signOut")}</SignOutButton>}
       />

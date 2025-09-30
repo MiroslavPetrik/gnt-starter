@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children, params }: LayoutParams) {
   const { lng } = await params;
   const cookie = (await cookies()).toString();
-
+ 
   return (
     <html lang={lng}>
       <ThemeInit />

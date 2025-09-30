@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Alert, HelperText, Label, TextInput } from "flowbite-react";
 import {
   createComponents,
@@ -7,10 +9,9 @@ import {
   useActionContext,
 } from "react-form-action/client";
 import { type User } from "@/types/user";
-import { useTranslation } from "react-i18next";
 import { SubmitButton } from "@/app/_components/submit-button";
 import { FormItem, FormLabel, Stack } from "@/app/_components";
-import { useState } from "react";
+
 import { updateUser } from "./action";
 import { updateUserSchema } from "./schema";
 

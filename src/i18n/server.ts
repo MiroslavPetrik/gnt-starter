@@ -24,10 +24,15 @@ const initI18next = cache(async (lng: string, ns: string) => {
   return i18n;
 });
 
+/**
+ * A server-side equivalent of the useTranslation hook.
+ * The name must match the configured value in i18next-parser.config.ts#L21.
+ */
 export async function translate(
   ns: string,
-  { lng = fallbackLng, keyPrefix }: { lng: Language; keyPrefix?: string },
+  { keyPrefix }: { keyPrefix?: string } = {},
 ) {
+  const lng = await getLngCookie();
   const i18n = await initI18next(lng, ns);
 
   const t = i18n.getFixedT(lng, ns, keyPrefix);

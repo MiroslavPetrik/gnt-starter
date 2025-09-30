@@ -1,22 +1,21 @@
 import { redirect } from "next/navigation";
-import { translate } from "@/i18n";
 import { Action } from "react-form-action/client";
-import { type Params } from "@/types";
+
+import { translate } from "@/i18n";
 import { api } from "@/trpc/server";
 import { PageHeader } from "@/app/_components/page-header";
 
 import { sendPasswordResetEmail } from "./action";
 import { PasswordResetEmailForm } from "./form";
 
-export default async function Page({ params }: Params) {
-  const { lng } = await params;
+export default async function Page() {
   const user = await api.user.getCurrentUser();
 
   if (!user?.email) {
     redirect("/");
   }
 
-  const { t } = await translate("settings", { lng, keyPrefix: "password" });
+  const { t } = await translate("settings", { keyPrefix: "password" });
 
   const sendCurrentUserPasswordResetEmail = sendPasswordResetEmail.bind(
     null,

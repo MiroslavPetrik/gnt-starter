@@ -12,7 +12,6 @@ type Story = StoryObj<typeof Navbar>;
 
 export const Primary: Story = {
   args: {
-    lng: "en",
     user: {
       id: "1",
       name: "Demo",

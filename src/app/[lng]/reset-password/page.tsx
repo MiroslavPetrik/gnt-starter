@@ -1,5 +1,3 @@
-"use server";
-
 import { Action } from "react-form-action/client";
 import { PageHeader } from "@/app/_components/page-header";
 import { type SearchParams, type Params, getSearchParam } from "@/types";
@@ -12,15 +10,13 @@ import { ResetPasswordForm } from "./form";
 type ResetPasswordSearchParams = SearchParams<typeof resetTokenFieldName>;
 
 export default async function ResetPassword({
-  params,
   searchParams,
 }: Params & ResetPasswordSearchParams) {
-  const { lng } = await params;
   const { reset_token = "" } = getSearchParam(
     await searchParams,
     resetTokenFieldName,
   );
-  const { t } = await translate("auth", { lng });
+  const { t } = await translate("auth");
 
   return (
     <Action action={resetPassword} initialData={undefined}>

@@ -1,7 +1,8 @@
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 import type { Language } from "./types";
 
-export function useLngPathname(lng: Language) {
+export function useLngPathname() {
   const pathname = usePathname();
 
   if (!pathname) {
@@ -9,6 +10,9 @@ export function useLngPathname(lng: Language) {
       "The useLngPathname() hook must be used within the Next.js App Router.",
     );
   }
+
+  const { i18n } = useTranslation();
+  const lng = i18n.resolvedLanguage as Language;
 
   const prefix = getPathnamePrefix(pathname, lng);
 
