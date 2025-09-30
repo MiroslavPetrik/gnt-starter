@@ -36,23 +36,19 @@ void i18next
   );
 
 export function Language({ lng, children }: PropsWithChildren<LanguageParam>) {
-  const [cookie, setLngCookie] = useLngCookie();
   const { i18n } = useTranslation();
 
-  if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
-    void i18n.changeLanguage(lng);
-  } else {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => {
-      if (!lng || i18n.resolvedLanguage === lng) return;
+  function updateLanguage() {
+    if (i18n.resolvedLanguage !== lng) {
       void i18n.changeLanguage(lng);
-    }, [lng, i18n]);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => {
-      if (cookie === lng) return;
-      setLngCookie(lng);
-    }, [lng, cookie, setLngCookie]);
+    }
   }
+
+  if (runsOnServerSide) {
+    updateLanguage();
+  }
+
+  useEffect(updateLanguage, [lng, i18n]);
 
   return <>{children}</>;
 }
