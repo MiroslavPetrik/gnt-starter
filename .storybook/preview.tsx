@@ -4,6 +4,9 @@ import "@/styles/globals.css";
 import * as inter from "@/styles/font/inter";
 
 import { decorateWithGlobalFont } from "./decorateWithGlobalFont";
+import { decorateWithLocale, locale } from "@/i18n/storybook";
+
+export const globalTypes = { locale };
 
 const preview: Preview = {
   parameters: {
@@ -13,7 +16,7 @@ const preview: Preview = {
       appDirectory: true,
     },
   },
-  decorators: [decorateWithGlobalFont(inter)],
+  decorators: [decorateWithGlobalFont(inter), decorateWithLocale],
 };
 
 export default preview;

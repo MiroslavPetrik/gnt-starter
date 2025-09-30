@@ -17,7 +17,7 @@ export function useLngCookie() {
   /**
    * The cookie is set and sanitized to a valid language in the middleware.
    */
-  const i18nCookie = (cookies[i18nCookieName] as Language) ?? fallbackLng;
+  const i18nCookie = cookies[i18nCookieName] as Language;
 
   const setLngCookie = useCallback(
     (lng: Language) => {
@@ -26,5 +26,5 @@ export function useLngCookie() {
     [setCookie],
   );
 
-  return [i18nCookie, setLngCookie] as const;
+  return [i18nCookie ?? fallbackLng, setLngCookie] as const;
 }

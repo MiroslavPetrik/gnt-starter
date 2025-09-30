@@ -20,13 +20,13 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children, params }: LayoutParams) {
   const { lng } = await params;
   const cookie = (await cookies()).toString();
- 
+
   return (
     <html lang={lng}>
       <ThemeInit />
       <body className={`font-sans ${font.variable} flex min-h-screen flex-col`}>
         <CookiesProvider cookies={cookie}>
-          <Language lng={lng}>
+          <Language>
             <TRPCReactProvider cookies={cookie}>{children}</TRPCReactProvider>
           </Language>
         </CookiesProvider>

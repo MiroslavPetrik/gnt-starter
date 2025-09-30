@@ -5,10 +5,10 @@ import i18next from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
+
 import { getOptions, languages } from "./options";
-import { useLngCookie } from "./use-lng-cookie";
-import type { LanguageParam } from "./types";
 import { setZodErrorMap } from "./zodError";
+import { useLngCookie } from "./use-lng-cookie";
 
 const runsOnServerSide = typeof window === "undefined";
 
@@ -35,8 +35,9 @@ void i18next
     },
   );
 
-export function Language({ lng, children }: PropsWithChildren<LanguageParam>) {
+export function Language({ children }: PropsWithChildren) {
   const { i18n } = useTranslation();
+  const [lng] = useLngCookie();
 
   function updateLanguage() {
     if (i18n.resolvedLanguage !== lng) {
