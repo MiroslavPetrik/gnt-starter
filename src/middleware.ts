@@ -19,7 +19,7 @@ export async function middleware(req: NextRequest) {
   const lngInPathname = findPathnameLanguage(req.nextUrl.pathname);
 
   if (!lngInPathname && !req.nextUrl.pathname.startsWith("/_next")) {
-    const url = new URL(
+    const lngUrl = new URL(
       `/${lng}${req.nextUrl.pathname}${req.nextUrl.search}`,
       req.url,
     );
@@ -29,10 +29,23 @@ export async function middleware(req: NextRequest) {
      * e.g. /home -> /en/home
      */
     if (lng === fallbackLng) {
-      return NextResponse.rewrite(url);
+      return NextResponse.rewrite(lngUrl);
     }
 
-    return NextResponse.redirect(url);
+    /**
+     * Set cookie and redirect to the detected language in the pathname.
+     */
+    const response = NextResponse.redirect(lngUrl);
+    response.cookies.set(i18nCookieName, lng);
+
+    return response;
+  }
+
+  if (lngInPathname) {
+    const response = NextResponse.next();
+    response.cookies.set(i18nCookieName, lngInPathname);
+
+    return response;
   }
 
   if (req.headers.has("referer")) {
