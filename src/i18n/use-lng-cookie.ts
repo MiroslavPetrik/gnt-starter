@@ -3,7 +3,7 @@
 import { useCookies } from "react-cookie";
 import { useCallback } from "react";
 import type { Language } from "./types";
-import { i18nCookieName } from "./options";
+import { fallbackLng, i18nCookieName } from "./options";
 
 type i18nCookies = {
   [i18nCookieName]?: string;
@@ -14,7 +14,10 @@ export function useLngCookie() {
     i18nCookieName,
   ]);
 
-  const i18nCookie = cookies[i18nCookieName];
+  /**
+   * The cookie is set and sanitized to a valid language in the middleware.
+   */
+  const i18nCookie = (cookies[i18nCookieName] as Language) ?? fallbackLng;
 
   const setLngCookie = useCallback(
     (lng: Language) => {
