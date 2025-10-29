@@ -52,12 +52,11 @@
     "react": "19.1.1",
     "react-cookie": "^8.0.1",
     "react-dom": "19.1.1",
-    "react-form-action": "^2.5.2",
+    "react-form-action": "^2.6.0",
     "react-i18next": "^15.7.3",
     "superjson": "^2.2.2",
-    "zod": "^3.24.0",
-    "zod-form-data": "^2.0.2",
-    "zod-i18n-map": "^2.27.0"
+    "zod": "^4.1.12",
+    "zod-form-data": "^3.0.1"
   },
   "devDependencies": {
     "@gel/generate": "^0.6.4",

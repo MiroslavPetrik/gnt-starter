@@ -7,7 +7,6 @@ import resourcesToBackend from "i18next-resources-to-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 import { getOptions, languages } from "./options";
-import { setZodErrorMap } from "./zodError";
 import { useLngCookie } from "./use-lng-cookie";
 
 const runsOnServerSide = typeof window === "undefined";
@@ -21,19 +20,14 @@ void i18next
         import(`./${language}/${namespace}.json`),
     ),
   )
-  .init(
-    {
-      ...getOptions("global"),
-      lng: undefined, // detect the language on client side
-      detection: {
-        order: ["path", "htmlTag", "cookie", "navigator"],
-      },
-      preload: runsOnServerSide ? languages : [],
+  .init({
+    ...getOptions("global"),
+    lng: undefined, // detect the language on client side
+    detection: {
+      order: ["path", "htmlTag", "cookie", "navigator"],
     },
-    (_err, t) => {
-      setZodErrorMap({ t });
-    },
-  );
+    preload: runsOnServerSide ? languages : [],
+  });
 
 export function Language({ children }: PropsWithChildren) {
   const { i18n } = useTranslation();

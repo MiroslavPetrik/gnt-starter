@@ -7,7 +7,7 @@ This is Next.js + Gel starter project bootstraped on the [T3 Stack](https://crea
 - [Next.js](https://nextjs.org) Fullstack React framework using the **app router**
 - [tRPC](https://trpc.io) typesafe end-2-end API definition & access
 - [Tailwind CSS](https://tailwindcss.com) with [Flowbite React](https://www.flowbite-react.com/) components
-- [i18next](https://www.i18next.com) localization integrated with [zod-i18n](https://github.com/aiji42/zod-i18n/)
+- [i18next](https://www.i18next.com) localization
   - [📄 Setup and Next.js usage guide](docs/i18n.md)
 - [Storybook](https://storybook.js.org) for building & testing UI in isolation
 

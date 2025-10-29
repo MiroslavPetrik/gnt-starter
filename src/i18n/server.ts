@@ -6,7 +6,6 @@ import { initReactI18next } from "react-i18next/initReactI18next";
 
 import { getOptions, i18nCookieName, fallbackLng } from "./options";
 import { type Language } from "./types";
-import { setZodErrorMap } from "./zodError";
 
 const initI18next = cache(async (lng: string, ns: string) => {
   const i18n = createInstance();
@@ -37,8 +36,6 @@ export async function translate(
 
   const t = i18n.getFixedT(lng, ns, keyPrefix);
 
-  setZodErrorMap({ t });
-
   return {
     t,
     i18n,
@@ -48,5 +45,5 @@ export async function translate(
 export async function getLngCookie() {
   const cookie = await cookies();
 
-  return (cookie.get(i18nCookieName)?.value ?? fallbackLng) as Language;
+  return (cookie.get(i18nCookieName)?.value as Language) ?? fallbackLng;
 }

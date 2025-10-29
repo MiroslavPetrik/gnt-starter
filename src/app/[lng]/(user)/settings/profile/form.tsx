@@ -56,7 +56,7 @@ export function UpdateUserForm({ user }: { user: User }) {
                     e.target.value,
                   );
 
-                  setNameErr(result.error?.errors[0]?.message);
+                  setNameErr(result.error?.issues[0]?.message);
                 }}
               />
               <HelperText>{error ?? nameError}</HelperText>
