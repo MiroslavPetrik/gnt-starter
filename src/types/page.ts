@@ -2,7 +2,7 @@ import type { AppRoutes } from ".next/types/routes";
 
 import type { Prettify } from "./utils";
 
-type LangRoutes = keyof {
+export type LangRoutes = keyof {
   [k in AppRoutes as k extends `/[lng]${infer path}` ? path : never]: true;
 };
 
