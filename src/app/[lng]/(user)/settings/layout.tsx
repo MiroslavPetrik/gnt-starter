@@ -1,9 +1,9 @@
-"use server";
-
 import { type LayoutParams } from "@/types";
 import { SettingsSidebar } from "./_components/sidebar";
 
-export default async function Profile({ children }: LayoutParams<"/settings">) {
+export default async function SettingsLayout({
+  children,
+}: LayoutParams<"/settings">) {
   return (
     <div className="flex flex-1">
       <div className="w-auto flex-none">

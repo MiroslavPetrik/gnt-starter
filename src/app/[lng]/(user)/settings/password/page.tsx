@@ -8,7 +8,7 @@ import { PageHeader } from "@/app/_components/page-header";
 import { sendPasswordResetEmail } from "./action";
 import { PasswordResetEmailForm } from "./form";
 
-export default async function Page() {
+export default async function PasswordPage() {
   const user = await api.user.getCurrentUser();
 
   if (!user?.email) {

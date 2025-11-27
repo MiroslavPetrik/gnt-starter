@@ -8,7 +8,7 @@ import { PageHeader } from "@/app/_components/page-header";
 import { UpdateUserForm } from "./form";
 import { updateUser } from "./action";
 
-export default async function Profile() {
+export default async function ProfilePage() {
   const user = await api.user.getCurrentUser();
   if (!user) {
     redirect("/");

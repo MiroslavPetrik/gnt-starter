@@ -1,5 +1,3 @@
-"use server";
-
 import { redirect } from "next/navigation";
 import { Action } from "react-form-action/client";
 import { PageHeader } from "@/app/_components/page-header";
@@ -12,7 +10,7 @@ import { EmailForm } from "./form";
 import { VerifiedAlert } from "./components/verified-alert";
 import { NotVerifiedAlert } from "./components/not-verified-alert";
 
-export default async function Page() {
+export default async function EmailPage() {
   const user = await api.user.getCurrentUser();
   if (!user?.email) {
     redirect("/");
