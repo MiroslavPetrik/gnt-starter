@@ -1,5 +1,5 @@
 import { Action } from "react-form-action/client";
-import { PageHeader } from "@/app/_components/page-header";
+import { PageHeader } from "@/components/page-header";
 import { translate } from "@/i18n";
 
 import { resetPasswordEmail } from "./action";

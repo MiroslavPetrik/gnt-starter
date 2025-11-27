@@ -11,8 +11,8 @@ import { Alert } from "flowbite-react";
 import { HelperText } from "flowbite-react/components/HelperText";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next/TransWithoutContext";
-import { SubmitButton } from "@/app/_components/submit-button";
-import { FormLabel, FormItem, Stack } from "@/app/_components";
+import { SubmitButton } from "@/components/submit-button";
+import { FormLabel, FormItem, Stack } from "@/components";
 import { signIn } from "./action";
 
 const { FieldError } = createComponents(signIn);

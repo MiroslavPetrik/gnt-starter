@@ -2,10 +2,10 @@
 
 import { Form, useActionContext } from "react-form-action/client";
 import { useTranslation } from "react-i18next";
-import { SubmitButton } from "@/app/_components/submit-button";
+import { SubmitButton } from "@/components/submit-button";
 import { type UserEmail } from "@/types";
 import { Label, TextInput, HelperText } from "flowbite-react";
-import { FormLabel, FormItem, Stack } from "@/app/_components";
+import { FormLabel, FormItem, Stack } from "@/components";
 import { resendVerificationEmail } from "./action";
 
 type Props = { email: UserEmail };

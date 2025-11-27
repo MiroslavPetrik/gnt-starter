@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { translate } from "@/i18n";
 import { type Params } from "@/types";
 
-import { LanguageSwitcher } from "../_components/language-switcher";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export default async function Home({ params }: Params) {
   const { lng } = await params;

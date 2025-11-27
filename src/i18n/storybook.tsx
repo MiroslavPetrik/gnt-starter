@@ -2,7 +2,7 @@ import type { ComponentType } from "react";
 import type { StoryContext } from "@storybook/nextjs";
 import { cookies } from "@storybook/nextjs/headers.mock";
 
-import { CookiesProvider } from "@/app/_components/cookies-provider";
+import { CookiesProvider } from "@/components/cookies-provider";
 import { Language } from "./client";
 import { i18nCookieName, languages } from "./options";
 

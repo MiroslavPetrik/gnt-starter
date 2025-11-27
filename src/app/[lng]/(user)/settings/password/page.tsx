@@ -3,7 +3,7 @@ import { Action } from "react-form-action/client";
 
 import { translate } from "@/i18n";
 import { api } from "@/trpc/server";
-import { PageHeader } from "@/app/_components/page-header";
+import { PageHeader } from "@/components/page-header";
 
 import { sendPasswordResetEmail } from "./action";
 import { PasswordResetEmailForm } from "./form";

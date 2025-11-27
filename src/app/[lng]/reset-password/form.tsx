@@ -11,9 +11,9 @@ import { Button } from "flowbite-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next/TransWithoutContext";
-import { SubmitButton } from "@/app/_components/submit-button";
+import { SubmitButton } from "@/components/submit-button";
 import { resetTokenFieldName } from "@/gel/shared";
-import { Stack, FormItem, FormLabel } from "@/app/_components";
+import { Stack, FormItem, FormLabel } from "@/components";
 import { resetPassword } from "./action";
 
 const { FieldError } = createComponents(resetPassword);

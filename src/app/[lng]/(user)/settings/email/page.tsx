@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import { Action } from "react-form-action/client";
-import { PageHeader } from "@/app/_components/page-header";
+import { PageHeader } from "@/components/page-header";
 import { translate } from "@/i18n";
 import { api } from "@/trpc/server";
-import { Stack } from "@/app/_components";
+import { Stack } from "@/components";
 
 import { resendVerificationEmail } from "./action";
 import { EmailForm } from "./form";

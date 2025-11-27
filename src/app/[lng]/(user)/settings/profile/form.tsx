@@ -9,8 +9,8 @@ import {
   useActionContext,
 } from "react-form-action/client";
 import { type User } from "@/types/user";
-import { SubmitButton } from "@/app/_components/submit-button";
-import { FormItem, FormLabel, Stack } from "@/app/_components";
+import { SubmitButton } from "@/components/submit-button";
+import { FormItem, FormLabel, Stack } from "@/components";
 
 import { updateUser } from "./action";
 import { updateUserSchema } from "./schema";

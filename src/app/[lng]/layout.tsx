@@ -7,7 +7,7 @@ import { TRPCReactProvider } from "@/trpc/react";
 import type { LayoutParams } from "@/types";
 import { Language } from "@/i18n/client";
 import { font } from "@/styles/font/inter";
-import { CookiesProvider } from "../_components/cookies-provider";
+import { CookiesProvider } from "@/components/cookies-provider";
 import { ThemeInit } from ".flowbite-react/init";
 
 export const metadata: Metadata = {

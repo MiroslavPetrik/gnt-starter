@@ -5,12 +5,12 @@ import {
   useActionContext,
   createComponents,
 } from "react-form-action/client";
-import { SubmitButton } from "@/app/_components/submit-button";
+import { SubmitButton } from "@/components/submit-button";
 import { Label } from "flowbite-react/components/Label";
 import { HelperText } from "flowbite-react/components/HelperText";
 import { TextInput } from "flowbite-react/components/TextInput";
 import { useTranslation } from "react-i18next";
-import { Stack, FormLabel, FormItem } from "@/app/_components";
+import { Stack, FormLabel, FormItem } from "@/components";
 import { createUser } from "./action";
 
 const { FieldError } = createComponents(createUser);

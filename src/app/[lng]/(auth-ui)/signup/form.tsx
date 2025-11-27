@@ -16,7 +16,7 @@ import {
   useActionContext,
 } from "react-form-action/client";
 import { useTranslation } from "react-i18next";
-import { Stack, FormItem, FormLabel } from "@/app/_components";
+import { Stack, FormItem, FormLabel } from "@/components";
 import { signUp } from "./action";
 
 const { FieldError } = createComponents(signUp);

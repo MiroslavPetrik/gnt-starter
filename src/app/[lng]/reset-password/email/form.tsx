@@ -11,8 +11,8 @@ import {
   createComponents,
 } from "react-form-action/client";
 
-import { SubmitButton } from "@/app/_components/submit-button";
-import { Stack, FormItem, FormLabel } from "@/app/_components";
+import { SubmitButton } from "@/components/submit-button";
+import { Stack, FormItem, FormLabel } from "@/components";
 import { resetPasswordEmail } from "./action";
 
 const { FieldError } = createComponents(resetPasswordEmail);

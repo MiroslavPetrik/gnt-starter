@@ -3,7 +3,7 @@ import { Action } from "react-form-action/client";
 
 import { api } from "@/trpc/server";
 import { translate } from "@/i18n";
-import { PageHeader } from "@/app/_components/page-header";
+import { PageHeader } from "@/components/page-header";
 
 import { UpdateUserForm } from "./form";
 import { updateUser } from "./action";
