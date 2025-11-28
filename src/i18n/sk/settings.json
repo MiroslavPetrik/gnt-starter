@@ -14,6 +14,9 @@
   "email": {
     "alreadyVerified": "<0>Tvoja emailová adresa je overená.</0> Teraz je možné bezpečne požiadať o zmenu hesla v prípade ak to budeš potrebovať.",
     "pleaseVerifyEmail": "<0>Tvoj emailová adresa nie je overená!</0> Prosím over svoju emailovú adresu, aby bolo možné obnoviť tvoj prístup k účtu, v prípade že zabudneš svoje heslo.",
+    "resendVerificationEmail": {
+      "success": "Bol ti odoslaný odkaz na overenie emailovej adresy."
+    },
     "sendingVerificationLink": "Odosielam odkaz...",
     "sendVerificationLink": "Odoslať odkaz na overenie",
     "title": "Email",

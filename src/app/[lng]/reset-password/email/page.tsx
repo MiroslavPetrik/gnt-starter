@@ -9,7 +9,7 @@ export default async function ResetPasswordEmail() {
   const { t } = await translate("auth");
 
   return (
-    <Action action={resetPasswordEmail} initialData="">
+    <Action action={resetPasswordEmail} initialData={undefined}>
       <PageHeader>{t("resetPasswordEmail.title")}</PageHeader>
 
       <ResetPasswordEmailForm />

@@ -10,17 +10,10 @@ const signInSchema = z.object({
 
 export const signIn = authAction
   .input(signInSchema)
-  .run(async ({ input, ctx: { actions, t } }) => {
+  .run(async ({ input, ctx: { actions } }) => {
     /**
      * This sets auth cookie, and toggles the session.isSignedIn().
      * So the AuthLayout will redirect the user to dashboard.
      */
     await actions.emailPasswordSignIn(input);
-
-    /**
-     * The AuthLayout redirect effectivelly makes this message useless,
-     * as there is no time to render it.
-     * Such message can be rendered, by shifting the routing responsibility to the client.
-     */
-    return t("auth:signIn.success");
   });

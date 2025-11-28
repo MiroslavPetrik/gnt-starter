@@ -24,7 +24,7 @@ const { FieldError } = createComponents(signUp);
 export function SignUpForm() {
   const { t } = useTranslation("auth", { keyPrefix: "signUp" });
 
-  const { isPending, isFailure, isSuccess, isInvalid, error, data } =
+  const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(signUp);
 
   function getColor(error?: string) {
@@ -36,7 +36,7 @@ export function SignUpForm() {
       <Stack>
         {isSuccess && (
           <div>
-            <Alert color="success">{data}</Alert>
+            <Alert color="success">{t("success")}</Alert>
           </div>
         )}
         {isFailure && (

@@ -18,7 +18,7 @@ export default async function EmailPage() {
   const { t } = await translate("settings");
 
   return (
-    <Action action={resendVerificationEmail} initialData="">
+    <Action action={resendVerificationEmail} initialData={undefined}>
       <PageHeader>{t("email.title")}</PageHeader>
       <Stack>
         {user.email.verifiedAt ? <VerifiedAlert /> : <NotVerifiedAlert />}

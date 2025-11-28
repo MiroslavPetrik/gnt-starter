@@ -9,7 +9,7 @@ export default async function SignIn() {
   const { t } = await translate("auth");
 
   return (
-    <Action action={signIn} initialData="">
+    <Action action={signIn} initialData={undefined}>
       <PageHeader>{t("signIn.title")}</PageHeader>
       <SignInForm />
     </Action>

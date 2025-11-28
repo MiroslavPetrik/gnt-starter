@@ -34,9 +34,4 @@ export const signUp = authAction
     if (!tokenData) {
       return t("auth:signUp.emailVerificationRequired");
     }
-
-    /**
-     * Similarly the success has no effect as in the signIn action.
-     */
-    return t("auth:signUp.success");
   });

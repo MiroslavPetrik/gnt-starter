@@ -13,19 +13,18 @@ type Props = { email: UserEmail };
 export function EmailForm({ email }: Props) {
   const { t } = useTranslation("settings", { keyPrefix: "email" });
 
-  const { isSuccess, isFailure, data, error } = useActionContext(
+  const { isSuccess, isFailure, error } = useActionContext(
     resendVerificationEmail,
   );
+
+  const color = isFailure ? "failure" : isSuccess ? "success" : undefined;
 
   return (
     <Form>
       <Stack>
         <FormItem>
           <FormLabel>
-            <Label
-              htmlFor="email"
-              color={isFailure ? "failure" : isSuccess ? "success" : undefined}
-            >
+            <Label htmlFor="email" color={color}>
               {t("yourEmail")}
             </Label>
           </FormLabel>
@@ -34,13 +33,13 @@ export function EmailForm({ email }: Props) {
             id="email"
             name="email"
             value={email.address}
-            color={isFailure ? "failure" : isSuccess ? "success" : undefined}
+            color={color}
           />
-          <HelperText>
+          <HelperText color={color}>
             {isFailure && error.message
               ? error.message
               : isSuccess
-                ? data
+                ? t("resendVerificationEmail.success")
                 : undefined}
           </HelperText>
         </FormItem>

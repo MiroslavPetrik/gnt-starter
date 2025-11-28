@@ -9,8 +9,6 @@ const resetPasswordEmailSchema = z.object({
 
 export const resetPasswordEmail = authAction
   .input(resetPasswordEmailSchema)
-  .run(async ({ input, ctx: { actions, t } }) => {
-    await actions.emailPasswordSendPasswordResetEmail(input);
-
-    return t("auth:resetPasswordEmail.success");
-  });
+  .run(async ({ input, ctx: { actions } }) =>
+    actions.emailPasswordSendPasswordResetEmail(input),
+  );

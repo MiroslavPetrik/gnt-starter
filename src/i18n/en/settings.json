@@ -14,6 +14,9 @@
   "email": {
     "alreadyVerified": "<0>Your email is verified.</0> You can safely request a password change email in case you need it.",
     "pleaseVerifyEmail": "<0>Email is not verified!</0> Please verify your email address, so you can access your account in case you forget your password.",
+    "resendVerificationEmail": {
+      "success": "Please check your email for a verification link."
+    },
     "sendingVerificationLink": "Sending verification link...",
     "sendVerificationLink": "Send verification link",
     "title": "Email",

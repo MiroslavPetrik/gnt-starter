@@ -20,7 +20,7 @@ const { FieldError } = createComponents(resetPasswordEmail);
 export function ResetPasswordEmailForm() {
   const { t } = useTranslation("auth", { keyPrefix: "resetPasswordEmail" });
 
-  const { isPending, isFailure, isSuccess, isInvalid, error, data } =
+  const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(resetPasswordEmail);
 
   function getColor(error?: string) {
@@ -32,7 +32,7 @@ export function ResetPasswordEmailForm() {
       <Stack>
         {isSuccess && (
           <div>
-            <Alert color="success">{data}</Alert>
+            <Alert color="success">{t("success")}</Alert>
           </div>
         )}
         {isFailure && (
