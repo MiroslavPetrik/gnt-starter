@@ -8,5 +8,6 @@
   "signOut": "Sign Out",
   "signUp": "Sign Up",
   "submit": "Submit",
-  "submitting": "Submitting..."
+  "submitting": "Submitting...",
+  "unexpectedError": "Unexpected error occurred"
 }

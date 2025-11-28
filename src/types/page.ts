@@ -6,6 +6,14 @@ export type LangRoutes = keyof {
   [k in AppRoutes as k extends `/[lng]${infer path}` ? path : never]: true;
 };
 
+export type RootPages = {
+  [K in LangRoutes]: K extends `/${infer Page}`
+    ? Page extends `${infer Root}/${string}`
+      ? Root
+      : Page
+    : never;
+}[LangRoutes];
+
 export type Params<Route extends LangRoutes = ""> = Prettify<
   PageProps<`/[lng]${Route}`>
 >;

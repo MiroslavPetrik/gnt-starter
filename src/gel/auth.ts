@@ -46,7 +46,7 @@ export const authorizedAction = formAction.use(async () => {
 export const authAction = formAction
   .use(async () => ({ actions }))
   .use(async () => {
-    const { t } = await translate("auth");
+    const { t } = await translate("global");
     return { t };
   })
   .error(async ({ error, ctx: { t } }) => {
@@ -58,7 +58,7 @@ export const authAction = formAction
       };
     } else {
       return {
-        message: t("auth:unexpectedError"),
+        message: t("global:unexpectedError"),
       };
     }
   });
@@ -68,13 +68,13 @@ const getErrorMessage = (error: Error, t: (key: string) => string) => {
     return error.cause;
   }
 
-  return error.message ?? t("auth:unexpectedError");
+  return error.message ?? t("global:unexpectedError");
 };
 
 const translateGelError = (error: Error, t: (key: string) => string) => {
   // https://github.com/geldata/gel/blob/6b29802935d71545e242e07db7a4a2074753287c/edb/server/protocol/auth_ext/errors.py#L183
   if (error.message === "Email verification is required") {
-    return { message: t("auth:gel.emailVerificationRequired") };
+    return { message: t("gel:emailVerificationRequired") };
   }
 
   // https://github.com/geldata/gel/blob/e675e03b22dc040812ef506fd30845e2d0a7f386/edb/server/protocol/auth_ext/errors.py#L102
@@ -82,11 +82,11 @@ const translateGelError = (error: Error, t: (key: string) => string) => {
     error.message ===
     "Could not find an Identity matching the provided credentials"
   ) {
-    return { message: t("auth:gel.noIdentityFound") };
+    return { message: t("gel:noIdentityFound") };
   }
 
   // https://github.com/geldata/gel/blob/e675e03b22dc040812ef506fd30845e2d0a7f386/edb/server/protocol/auth_ext/errors.py#L123
   if (error.message === "This user has already been registered") {
-    return { message: t("auth:gel.userAlreadyRegistered") };
+    return { message: t("gel:userAlreadyRegistered") };
   }
 };

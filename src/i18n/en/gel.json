@@ -1,0 +1,5 @@
+{
+  "emailVerificationRequired": "Email verification is required. Please check your email.",
+  "noIdentityFound": "Could not find an Identity matching the provided credentials.",
+  "userAlreadyRegistered": "This user has already been registered."
+}

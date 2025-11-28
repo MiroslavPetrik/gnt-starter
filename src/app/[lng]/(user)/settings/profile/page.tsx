@@ -13,11 +13,11 @@ export default async function ProfilePage() {
   if (!user) {
     redirect("/");
   }
-  const { t } = await translate("settings");
+  const { t } = await translate("settings", { keyPrefix: "editProfile" });
 
   return (
     <Action action={updateUser} initialData={undefined}>
-      <PageHeader>{t("editProfile.title")}</PageHeader>
+      <PageHeader>{t("title")}</PageHeader>
       <div className="w-full max-w-xs">
         <UpdateUserForm user={user} />
       </div>

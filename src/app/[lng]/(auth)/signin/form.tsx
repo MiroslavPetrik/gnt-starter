@@ -18,7 +18,7 @@ import { signIn } from "./action";
 const { FieldError } = createComponents(signIn);
 
 export function SignInForm() {
-  const { t } = useTranslation("auth", { keyPrefix: "signIn" });
+  const { t } = useTranslation("signin");
 
   const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(signIn);

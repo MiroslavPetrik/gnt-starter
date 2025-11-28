@@ -16,11 +16,11 @@ export default async function ResetPassword({
     await searchParams,
     resetTokenFieldName,
   );
-  const { t } = await translate("auth");
+  const { t } = await translate("reset-password");
 
   return (
     <Action action={resetPassword} initialData={undefined}>
-      <PageHeader>{t("resetPassword.title")}</PageHeader>
+      <PageHeader>{t("title")}</PageHeader>
       <ResetPasswordForm reset_token={reset_token} />
     </Action>
   );

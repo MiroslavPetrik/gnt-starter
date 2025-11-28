@@ -15,11 +15,11 @@ export default async function EmailPage() {
   if (!user?.email) {
     redirect("/");
   }
-  const { t } = await translate("settings");
+  const { t } = await translate("settings", { keyPrefix: "email" });
 
   return (
     <Action action={resendVerificationEmail} initialData={undefined}>
-      <PageHeader>{t("email.title")}</PageHeader>
+      <PageHeader>{t("title")}</PageHeader>
       <Stack>
         {user.email.verifiedAt ? <VerifiedAlert /> : <NotVerifiedAlert />}
         <EmailForm email={user.email} />

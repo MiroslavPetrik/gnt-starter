@@ -6,11 +6,11 @@ import { resetPasswordEmail } from "./action";
 import { ResetPasswordEmailForm } from "./form";
 
 export default async function ResetPasswordEmail() {
-  const { t } = await translate("auth");
+  const { t } = await translate("reset-password", { keyPrefix: "email" });
 
   return (
     <Action action={resetPasswordEmail} initialData={undefined}>
-      <PageHeader>{t("resetPasswordEmail.title")}</PageHeader>
+      <PageHeader>{t("title")}</PageHeader>
 
       <ResetPasswordEmailForm />
     </Action>

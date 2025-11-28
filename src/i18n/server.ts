@@ -4,6 +4,7 @@ import { createInstance } from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next/initReactI18next";
 
+import { RootPages } from "@/types/page";
 import { getOptions, i18nCookieName, fallbackLng } from "./options";
 import { type Language } from "./types";
 
@@ -28,7 +29,7 @@ const initI18next = cache(async (lng: string, ns: string) => {
  * The name must match the configured value in i18next-parser.config.ts#L21.
  */
 export async function translate(
-  ns: string,
+  ns: RootPages | "gel" | "global",
   { keyPrefix }: { keyPrefix?: string } = {},
 ) {
   const lng = await getLngCookie();

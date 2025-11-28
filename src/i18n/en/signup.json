@@ -1,0 +1,12 @@
+{
+  "agreeTOC": "I agree with the <1>terms and conditions</1>",
+  "email": "Email",
+  "emailVerificationRequired": "We've sent you an email to verify your email address. Please check your email inbox.",
+  "linkToSignIn": "Already have an account? <1>Sign in</1>",
+  "password": "Password",
+  "passwordRepeat": "Repeat Password",
+  "register": "Register new account",
+  "success": "Please check you email for a verification link.",
+  "title": "Registration",
+  "yourEmail": "Your email"
+}

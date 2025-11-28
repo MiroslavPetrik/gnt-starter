@@ -18,7 +18,7 @@ import { resetPasswordEmail } from "./action";
 const { FieldError } = createComponents(resetPasswordEmail);
 
 export function ResetPasswordEmailForm() {
-  const { t } = useTranslation("auth", { keyPrefix: "resetPasswordEmail" });
+  const { t } = useTranslation("reset-password", { keyPrefix: "email" });
 
   const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(resetPasswordEmail);

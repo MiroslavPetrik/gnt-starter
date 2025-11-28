@@ -22,7 +22,7 @@ import { signUp } from "./action";
 const { FieldError } = createComponents(signUp);
 
 export function SignUpForm() {
-  const { t } = useTranslation("auth", { keyPrefix: "signUp" });
+  const { t } = useTranslation("signup");
 
   const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(signUp);

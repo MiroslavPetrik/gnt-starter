@@ -6,11 +6,11 @@ import { signIn } from "./action";
 import { SignInForm } from "./form";
 
 export default async function SignIn() {
-  const { t } = await translate("auth");
+  const { t } = await translate("signin");
 
   return (
     <Action action={signIn} initialData={undefined}>
-      <PageHeader>{t("signIn.title")}</PageHeader>
+      <PageHeader>{t("title")}</PageHeader>
       <SignInForm />
     </Action>
   );

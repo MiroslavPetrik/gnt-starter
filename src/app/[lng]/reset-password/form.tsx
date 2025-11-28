@@ -27,7 +27,7 @@ const GEL_ERR_MESSAGES = {
 type Props = { [resetTokenFieldName]: string };
 
 export function ResetPasswordForm({ reset_token }: Props) {
-  const { t } = useTranslation("auth", { keyPrefix: "resetPassword" });
+  const { t } = useTranslation("reset-password");
 
   const { isPending, isFailure, isSuccess, isInvalid, error } =
     useActionContext(resetPassword);

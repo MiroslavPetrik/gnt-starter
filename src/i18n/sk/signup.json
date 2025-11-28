@@ -1,0 +1,12 @@
+{
+  "agreeTOC": "Súhlasím s <1>pravidlami používania</1>",
+  "email": "Email",
+  "emailVerificationRequired": "Poslali sme ti link na overenie email. Prosím skontroluj svoju emailovú schŕanku.",
+  "linkToSignIn": "Už máš účet? <1>Prihlás sa</1>",
+  "password": "Heslo",
+  "passwordRepeat": "Potvrď heslo",
+  "register": "Registrovať",
+  "success": "Tvoj účet bol vytvorený.",
+  "title": "Registrácia",
+  "yourEmail": "Váš email"
+}

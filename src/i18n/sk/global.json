@@ -8,5 +8,6 @@
   "signOut": "Odhlásiť",
   "signUp": "Registrovať",
   "submit": "Odoslať",
-  "submitting": "Odosielam..."
+  "submitting": "Odosielam...",
+  "unexpectedError": "Došlo k nečakanej chybe"
 }
