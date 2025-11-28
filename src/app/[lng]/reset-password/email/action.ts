@@ -4,7 +4,7 @@ import { authAction } from "@/gel";
 import { z } from "zod";
 
 const resetPasswordEmailSchema = z.object({
-  email: z.string().email(),
+  email: z.email(),
 });
 
 export const resetPasswordEmail = authAction

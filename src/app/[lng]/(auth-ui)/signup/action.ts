@@ -6,7 +6,7 @@ import { t } from "@/i18n";
 
 const signUpSchema = z
   .object({
-    email: z.string().email(),
+    email: z.email(),
     password: z.string().min(1),
     passwordRepeat: z.string().min(1),
     termsOfService: z.coerce.boolean().refine((agrees) => agrees, {
